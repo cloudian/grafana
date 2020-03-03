@@ -47,6 +47,7 @@ $red: $red-base;
 $yellow: ${theme.colors.yellow};
 $orange: ${theme.colors.orange};
 $purple: ${theme.colors.purple};
+$green: ${theme.colors.green};
 $variable: ${theme.colors.variable};
 
 $brand-primary: ${theme.colors.brandPrimary};
@@ -81,8 +82,8 @@ $text-color-emphasis: ${theme.colors.textEmphasis};
 $text-shadow-faint: none;
 
 // gradients
-$brand-gradient-horizontal: linear-gradient(to right, #f05a28 30%, #fbca0a 99%);
-$brand-gradient-vertical: linear-gradient(#f05a28 30%, #fbca0a 99%);
+$brand-gradient-horizontal: linear-gradient(to right, #C1D500 30%, #9A989B 60%, #FFFFFF 99%);
+$brand-gradient-vertical: linear-gradient(#C1D500 30%, #9A989B 60%, #FFFFFF 99%);
 $page-gradient: linear-gradient(180deg, $white 10px, $gray-7 100px);
 $edit-gradient: linear-gradient(-60deg, $gray-7, #f5f6f9 70%, $gray-7 98%);
 

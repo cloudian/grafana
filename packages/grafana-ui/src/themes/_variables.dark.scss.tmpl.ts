@@ -54,6 +54,7 @@ $red: $red-base;
 $yellow: ${theme.colors.yellow};
 $orange: ${theme.colors.orange};
 $purple: ${theme.colors.purple};
+$green: ${theme.colors.green};
 $variable: ${theme.colors.variable};
 
 $brand-primary: ${theme.colors.brandPrimary};
@@ -89,8 +90,8 @@ $text-shadow-faint: 1px 1px 4px rgb(45, 45, 45);
 $textShadow: none;
 
 // gradients
-$brand-gradient-horizontal: linear-gradient(to right, #f05a28 30%, #fbca0a 99%);
-$brand-gradient-vertical: linear-gradient(#f05a28 30%, #fbca0a 99%);
+$brand-gradient-horizontal: linear-gradient(to right, #C1D500 30%, #9A989B 60%, #FFFFFF 99%);
+$brand-gradient-vertical: linear-gradient(#C1D500 30%, #9A989B 60%, #FFFFFF 99%);
 $page-gradient: linear-gradient(180deg, $dark-5 10px, dark-2 100px);
 $edit-gradient: linear-gradient(180deg, $dark-2 50%, $input-black);
 

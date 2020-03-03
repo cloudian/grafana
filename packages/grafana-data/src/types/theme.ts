@@ -169,6 +169,7 @@ export interface GrafanaTheme extends GrafanaThemeCommons {
     blueFaint: string;
     redBase: string;
     redShade: string;
+    green: string;
     greenBase: string;
     greenShade: string;
     red: string;
