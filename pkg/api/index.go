@@ -143,17 +143,6 @@ func (hs *HTTPServer) setIndexViewData(c *m.ReqContext) (*dtos.IndexViewData, er
 		Children:   dashboardChildNavs,
 	})
 
-	if setting.ExploreEnabled && (c.OrgRole == m.ROLE_ADMIN || c.OrgRole == m.ROLE_EDITOR || setting.ViewersCanEdit) {
-		data.NavTree = append(data.NavTree, &dtos.NavLink{
-			Text:       "Explore",
-			Id:         "explore",
-			SubTitle:   "Explore your data",
-			Icon:       "gicon gicon-explore",
-			SortWeight: dtos.WeightExplore,
-			Url:        setting.AppSubUrl + "/explore",
-		})
-	}
-
 	if c.IsSignedIn {
 		// Only set login if it's different from the name
 		var login string
@@ -278,14 +267,6 @@ func (hs *HTTPServer) setIndexViewData(c *m.ReqContext) (*dtos.IndexViewData, er
 		})
 	}
 
-	configNodes = append(configNodes, &dtos.NavLink{
-		Text:        "Plugins",
-		Id:          "plugins",
-		Description: "View and configure plugins",
-		Icon:        "gicon gicon-plugins",
-		Url:         setting.AppSubUrl + "/plugins",
-	})
-
 	if c.OrgRole == m.ROLE_ADMIN {
 		configNodes = append(configNodes, &dtos.NavLink{
 			Text:        "Preferences",
@@ -303,15 +284,17 @@ func (hs *HTTPServer) setIndexViewData(c *m.ReqContext) (*dtos.IndexViewData, er
 		})
 	}
 
-	data.NavTree = append(data.NavTree, &dtos.NavLink{
-		Id:         "cfg",
-		Text:       "Configuration",
-		SubTitle:   "Organization: " + c.OrgName,
-		Icon:       "gicon gicon-cog",
-		Url:        configNodes[0].Url,
-		SortWeight: dtos.WeightConfig,
-		Children:   configNodes,
-	})
+	if c.OrgRole == m.ROLE_ADMIN || hs.Cfg.EditorsCanAdmin {
+		data.NavTree = append(data.NavTree, &dtos.NavLink{
+			Id:         "cfg",
+			Text:       "Configuration",
+			SubTitle:   "Organization: " + c.OrgName,
+			Icon:       "gicon gicon-cog",
+			Url:        configNodes[0].Url,
+			SortWeight: dtos.WeightConfig,
+			Children:   configNodes,
+		})
+	}
 
 	if c.IsGrafanaAdmin {
 		adminNavLinks := []*dtos.NavLink{

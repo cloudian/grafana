@@ -8,8 +8,8 @@ Array [
     key="logo"
   >
     <img
-      alt="Grafana"
-      src="public/img/grafana_icon.svg"
+      alt="Cloudian"
+      src="public/img/cloudian_logo.png"
     />
   </a>,
   <div
