@@ -1,12 +1,12 @@
 {
-  "author": "Grafana Labs",
+  "author": "Grafana Labs and Cloudian, Inc.",
   "license": "Apache-2.0",
   "private": true,
-  "name": "grafana",
+  "name": "cloudian-grafana",
   "version": "6.5.3",
   "repository": {
     "type": "git",
-    "url": "http://github.com/grafana/grafana.git"
+    "url": "http://github.com/cloudian/grafana.git"
   },
   "devDependencies": {
     "@babel/core": "7.6.4",
