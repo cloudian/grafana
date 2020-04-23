@@ -369,11 +369,17 @@ func createPackage(options linuxPackageOptions) {
 		"--config-files", options.systemdServiceFilePath,
 		"--after-install", options.postinstSrc,
 
+		// cloudian customization
+		// conflict with grafana so it can't be installed at the same time
+		// but also provide it, so other software depending on it can use us as dep
+		"--provides", "grafana",
+		"--conflicts", "grafana",
+
 		"--version", linuxPackageVersion,
 		"-p", "./dist",
 	}
 
-	name := "grafana"
+	name := "cloudian-grafana"
 	if enterprise {
 		name += "-enterprise"
 		args = append(args, "--replaces", "grafana")
