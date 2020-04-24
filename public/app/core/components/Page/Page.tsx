@@ -32,7 +32,7 @@ class Page extends Component<Props> {
 
   updateTitle = () => {
     const title = this.getPageTitle;
-    document.title = title ? title + ' - Cloudian® HyperView' : 'Cloudian® HyperView';
+    document.title = title ? title + ' - Cloudian® HyperIQ' : 'Cloudian® HyperIQ';
   };
 
   get getPageTitle() {

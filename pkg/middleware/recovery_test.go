@@ -37,7 +37,7 @@ func TestRecoveryMiddleware(t *testing.T) {
 
 			So(sc.resp.Code, ShouldEqual, 500)
 			So(sc.resp.Header().Get("content-type"), ShouldEqual, "text/html; charset=UTF-8")
-			So(sc.resp.Body.String(), ShouldContainSubstring, "<title>Cloudian® HyperView - Error</title>")
+			So(sc.resp.Body.String(), ShouldContainSubstring, "<title>Cloudian® HyperIQ - Error</title>")
 		})
 	})
 }
