@@ -361,7 +361,7 @@ func createPackage(options linuxPackageOptions) {
 	args := []string{
 		"-s", "dir",
 		// cloudian customization
-		"--description", "Grafana with some customizations.",
+		"--description", "Cloudian fork of Grafana.",
 
 		"-C", packageRoot,
 
