@@ -360,10 +360,15 @@ func createPackage(options linuxPackageOptions) {
 
 	args := []string{
 		"-s", "dir",
-		"--description", "Grafana",
+		// cloudian customization
+		"--description", "Cloudian fork of Grafana.",
+
 		"-C", packageRoot,
-		"--url", "https://grafana.com",
-		"--maintainer", "contact@grafana.com",
+
+		// cloudian customization
+		"--url", "https://cloudian.com",
+		"--maintainer", "Cloudian Packaging <packaging@cloudian.com>",
+
 		"--config-files", options.initdScriptFilePath,
 		"--config-files", options.etcDefaultFilePath,
 		"--config-files", options.systemdServiceFilePath,
@@ -374,11 +379,14 @@ func createPackage(options linuxPackageOptions) {
 		// but also provide it, so other software depending on it can use us as dep
 		"--provides", "grafana",
 		"--conflicts", "grafana",
+		// this doesn't work for setting the Section
+		// "--category", "net",
 
 		"--version", linuxPackageVersion,
 		"-p", "./dist",
 	}
 
+	// cloudian customization
 	name := "cloudian-grafana"
 	if enterprise {
 		name += "-enterprise"
@@ -395,7 +403,8 @@ func createPackage(options linuxPackageOptions) {
 	if enterprise {
 		description += " Enterprise"
 	}
-	args = append(args, "--vendor", description)
+	// cloudian customization: if we don't set the vendor, it's automatically filled with nonsense
+	args = append(args, "--vendor", "Cloudian, Inc.")
 
 	if !enterprise {
 		args = append(args, "--license", "\"Apache 2.0\"")
