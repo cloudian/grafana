@@ -367,7 +367,7 @@ func createPackage(options linuxPackageOptions) {
 
 		// cloudian customization
 		"--url", "https://cloudian.com",
-		"--maintainer", "Cloudian Engineering <cloudian-eng@cloudian.com>",
+		"--maintainer", "Cloudian Packaging <packaging@cloudian.com>",
 
 		"--config-files", options.initdScriptFilePath,
 		"--config-files", options.etcDefaultFilePath,
