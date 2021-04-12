@@ -15,7 +15,7 @@ const getStyles = stylesFactory((theme: GrafanaTheme) => {
 
       &:hover {
         background: ${styleMixins.hoverColor(theme.colors.bg1, theme)};
-        border-image: linear-gradient(#f05a28 30%, #fbca0a 99%);
+        border-image: linear-gradient(#c1d500 30%, #fbca0a 99%);
         border-image-slice: 1;
         border-style: solid;
         border-top: 0;

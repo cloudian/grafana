@@ -100,8 +100,8 @@ $text-shadow-faint: 1px 1px 4px rgb(45, 45, 45);
 $textShadow: none;
 
 // gradients
-$brand-gradient-horizontal: linear-gradient(to right, #f05a28 30%, #fbca0a 99%);
-$brand-gradient-vertical: linear-gradient(#f05a28 30%, #fbca0a 99%);
+$brand-gradient-horizontal: linear-gradient(to right, #c1d500 30%, #fbca0a 99%);
+$brand-gradient-vertical: linear-gradient(#c1d500 30%, #fbca0a 99%);
 
 // Links
 // -------------------------
