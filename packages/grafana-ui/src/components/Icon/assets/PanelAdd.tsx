@@ -17,9 +17,9 @@ export const PanelAdd: FunctionComponent<SvgProps> = ({ ...rest }) => {
         <stop offset="4.010540e-02" style={{ stopColor: '#FEE62D' }} />
         <stop offset="0.1171" style={{ stopColor: '#FED41A' }} />
         <stop offset="0.1964" style={{ stopColor: '#FDC90F' }} />
-        <stop offset="0.2809" style={{ stopColor: '#FDC60B' }} />
-        <stop offset="0.6685" style={{ stopColor: '#F28F3F' }} />
-        <stop offset="0.8876" style={{ stopColor: '#ED693C' }} />
+        <stop offset="0.2809" style={{ stopColor: '#F2FF80' }} />
+        <stop offset="0.6685" style={{ stopColor: '#C1D500' }} />
+        <stop offset="0.8876" style={{ stopColor: '#A1B300' }} />
         <stop offset="1" style={{ stopColor: '#E83E39' }} />
       </linearGradient>
       <path

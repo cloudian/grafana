@@ -197,7 +197,7 @@ const getMenuStyles = (theme: GrafanaTheme) => {
 
       &:hover {
         background: ${itemBgHover};
-        border-image: linear-gradient(#c1d500 30%, #fbca0a 99%);
+        border-image: linear-gradient(#c1d500 30%, #9a989b 60%, #ffffff 99%);
         border-image-slice: 1;
       }
     `,

@@ -23,9 +23,9 @@
 	<stop  offset="4.010540e-02" style="stop-color:#FEE62D"/>
 	<stop  offset="0.1171" style="stop-color:#FED41A"/>
 	<stop  offset="0.1964" style="stop-color:#FDC90F"/>
-	<stop  offset="0.2809" style="stop-color:#FDC60B"/>
-	<stop  offset="0.6685" style="stop-color:#F28F3F"/>
-	<stop  offset="0.8876" style="stop-color:#ED693C"/>
+	<stop  offset="0.2809" style="stop-color:#F2FF80"/>
+	<stop  offset="0.6685" style="stop-color:#C1D500"/>
+	<stop  offset="0.8876" style="stop-color:#A1B300"/>
 	<stop  offset="1" style="stop-color:#E83E39"/>
 </linearGradient>
 <path class="st3" d="M59.4,44.5h-5H54h-3.7v-9c0-0.4-0.4-0.8-0.8-0.8h-8.2c-0.4,0-0.8,0.4-0.8,0.8v9h-9c-0.4,0-0.8,0.4-0.8,0.8v8.2
