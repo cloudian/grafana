@@ -23,12 +23,6 @@ export let getFooterLinks = (): FooterLink[] => {
       url: 'https://grafana.com/products/enterprise/?utm_source=grafana_footer',
       target: '_blank',
     },
-    {
-      text: 'Community',
-      icon: 'comments-alt',
-      url: 'https://community.grafana.com/?utm_source=grafana_footer',
-      target: '_blank',
-    },
   ];
 };
 
@@ -66,12 +60,12 @@ export function setVersionLinkFn(fn: typeof getFooterLinks) {
 }
 
 export const Footer: FC = React.memo(() => {
-  const links = getFooterLinks().concat(getVersionLinks());
+  const links = getFooterLinks();
 
   return (
     <footer className="footer">
       <div className="text-center">
-        <!--ul>
+        <ul>
           {links.map((link) => (
             <li key={link.text}>
               <a href={link.url} target={link.target} rel="noopener">
@@ -79,7 +73,7 @@ export const Footer: FC = React.memo(() => {
               </a>
             </li>
           ))}
-        </ul-->
+        </ul>
       </div>
     </footer>
   );
