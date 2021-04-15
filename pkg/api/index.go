@@ -178,17 +178,6 @@ func (hs *HTTPServer) getNavTree(c *models.ReqContext, hasEditPerm bool) ([]*dto
 		Children:   dashboardChildNavs,
 	})
 
-	if setting.ExploreEnabled && (c.OrgRole == models.ROLE_ADMIN || c.OrgRole == models.ROLE_EDITOR || setting.ViewersCanEdit) {
-		navTree = append(navTree, &dtos.NavLink{
-			Text:       "Explore",
-			Id:         "explore",
-			SubTitle:   "Explore your data",
-			Icon:       "compass",
-			SortWeight: dtos.WeightExplore,
-			Url:        setting.AppSubUrl + "/explore",
-		})
-	}
-
 	if c.IsSignedIn {
 		navTree = append(navTree, getProfileNode(c))
 	}
@@ -249,14 +238,6 @@ func (hs *HTTPServer) getNavTree(c *models.ReqContext, hasEditPerm bool) ([]*dto
 	}
 
 	if c.OrgRole == models.ROLE_ADMIN {
-		configNodes = append(configNodes, &dtos.NavLink{
-			Text:        "Plugins",
-			Id:          "plugins",
-			Description: "View and configure plugins",
-			Icon:        "plug",
-			Url:         setting.AppSubUrl + "/plugins",
-		})
-
 		configNodes = append(configNodes, &dtos.NavLink{
 			Text:        "Preferences",
 			Id:          "org-settings",
