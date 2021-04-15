@@ -309,19 +309,20 @@ export class DashboardPage extends PureComponent<Props, State> {
       <div className="dashboard-container">
         <DashNav dashboard={dashboard} isFullscreen={!!viewPanel} $injector={$injector} onAddPanel={this.onAddPanel} />
 
-        <div className="dashboard-content">
-          {initError && this.renderInitFailedState()}
-          {!editPanel && (
-            <SubMenu dashboard={dashboard} annotations={dashboard.annotations.list} links={dashboard.links} />
-          )}
-          <div className="dashboard-scroll">
-            <CustomScrollbar
-              autoHeightMin="100%"
-              setScrollTop={this.setScrollTop}
-              scrollTop={updateScrollTop}
-              hideHorizontalTrack={true}
-              updateAfterMountMs={500}
-            >
+        <div className="dashboard-scroll">
+          <CustomScrollbar
+            autoHeightMin="100%"
+            setScrollTop={this.setScrollTop}
+            scrollTop={updateScrollTop}
+            hideHorizontalTrack={true}
+            updateAfterMountMs={500}
+          >
+            <div className="dashboard-content">
+              {initError && this.renderInitFailedState()}
+              {!editPanel && (
+                <SubMenu dashboard={dashboard} annotations={dashboard.annotations.list} links={dashboard.links} />
+              )}
+
               <DashboardGrid
                 dashboard={dashboard}
                 viewPanel={viewPanel}
@@ -329,8 +330,8 @@ export class DashboardPage extends PureComponent<Props, State> {
                 scrollTop={approximateScrollTop}
                 isPanelEditorOpen={isPanelEditorOpen}
               />
-            </CustomScrollbar>
-          </div>
+            </div>
+          </CustomScrollbar>
         </div>
 
         {inspectPanel && <PanelInspector dashboard={dashboard} panel={inspectPanel} defaultTab={inspectTab} />}
