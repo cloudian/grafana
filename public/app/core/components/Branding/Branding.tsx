@@ -41,7 +41,7 @@ export class Branding {
   static LoginTitle = 'Welcome to Cloudian® HyperIQ';
   static GetLoginSubTitle = () => {
     const slogans = [
-      "",
+      '',
     ];
     const count = slogans.length;
     return slogans[Math.floor(Math.random() * count)];
