@@ -309,14 +309,12 @@ export class DashboardPage extends PureComponent<Props, State> {
       <div className="dashboard-container">
         <DashNav dashboard={dashboard} isFullscreen={!!viewPanel} $injector={$injector} onAddPanel={this.onAddPanel} />
 
-        <div className="dashboard-scroll">
-          
-          <div className="dashboard-content">
-            {initError && this.renderInitFailedState()}
-            {!editPanel && (
-              <SubMenu dashboard={dashboard} annotations={dashboard.annotations.list} links={dashboard.links} />
-            )}
-
+        <div className="dashboard-content">
+          {initError && this.renderInitFailedState()}
+          {!editPanel && (
+            <SubMenu dashboard={dashboard} annotations={dashboard.annotations.list} links={dashboard.links} />
+          )}
+          <div className="dashboard-scroll">
             <CustomScrollbar
               autoHeightMin="100%"
               setScrollTop={this.setScrollTop}
