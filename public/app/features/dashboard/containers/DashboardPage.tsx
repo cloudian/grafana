@@ -322,7 +322,6 @@ export class DashboardPage extends PureComponent<Props, State> {
               hideHorizontalTrack={true}
               updateAfterMountMs={500}
             >
-
               <DashboardGrid
                 dashboard={dashboard}
                 viewPanel={viewPanel}
