@@ -39,11 +39,4 @@ export class Branding {
   static LoginBoxBackground = LoginBoxBackground;
   static AppTitle = 'Cloudian® HyperIQ';
   static LoginTitle = 'Welcome to Cloudian® HyperIQ';
-  static GetLoginSubTitle = () => {
-    const slogans = [
-      '',
-    ];
-    const count = slogans.length;
-    return slogans[Math.floor(Math.random() * count)];
-  };
 }
