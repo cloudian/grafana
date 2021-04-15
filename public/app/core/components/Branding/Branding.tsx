@@ -13,7 +13,7 @@ const LoginLogo: FC<BrandComponentProps> = ({ className }) => {
 
 const LoginBackground: FC<BrandComponentProps> = ({ className, children }) => {
   const background = css`
-    background: url(../img/login_bg.jpg);
+    background: url(public/img/login_bg.jpg);
     background-size: cover;
   `;
 
