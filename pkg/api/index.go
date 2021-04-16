@@ -303,14 +303,9 @@ func (hs *HTTPServer) getNavTree(c *models.ReqContext, hasEditPerm bool) ([]*dto
 		})
 	}
 
-	helpVersion := fmt.Sprintf(`%s v%s (%s)`, setting.ApplicationName, setting.BuildVersion, setting.BuildCommit)
-	if hs.Cfg.AnonymousHideVersion && !c.IsSignedIn {
-		helpVersion = setting.ApplicationName
-	}
-
 	navTree = append(navTree, &dtos.NavLink{
 		Text:         "Help",
-		SubTitle:     helpVersion,
+		SubTitle:     "",
 		Id:           "help",
 		Url:          "#",
 		Icon:         "question-circle",
