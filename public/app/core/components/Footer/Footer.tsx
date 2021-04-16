@@ -17,12 +17,6 @@ export let getFooterLinks = (): FooterLink[] => {
       url: 'https://grafana.com/docs/grafana/latest/?utm_source=grafana_footer',
       target: '_blank',
     },
-    {
-      text: 'Support',
-      icon: 'question-circle',
-      url: 'https://grafana.com/products/enterprise/?utm_source=grafana_footer',
-      target: '_blank',
-    },
   ];
 };
 
