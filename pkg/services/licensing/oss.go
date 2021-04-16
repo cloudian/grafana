@@ -1,7 +1,6 @@
 package licensing
 
 import (
-	"github.com/grafana/grafana/pkg/api/dtos"
 	"github.com/grafana/grafana/pkg/models"
 	"github.com/grafana/grafana/pkg/services/hooks"
 	"github.com/grafana/grafana/pkg/setting"
@@ -42,23 +41,6 @@ func (l *OSSLicensingService) LicenseURL(user *models.SignedInUser) string {
 	}
 
 	return "https://grafana.com/products/enterprise/?utm_source=grafana_footer"
-}
-
-func (l *OSSLicensingService) Init() error {
-	l.HooksService.AddIndexDataHook(func(indexData *dtos.IndexViewData, req *models.ReqContext) {
-		for _, node := range indexData.NavTree {
-			if node.Id == "admin" {
-				node.Children = append(node.Children, &dtos.NavLink{
-					Text: "Upgrade",
-					Id:   "upgrading",
-					Url:  l.LicenseURL(req.SignedInUser),
-					Icon: "unlock",
-				})
-			}
-		}
-	})
-
-	return nil
 }
 
 func (*OSSLicensingService) HasValidLicense() bool {
