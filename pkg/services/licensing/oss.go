@@ -43,6 +43,10 @@ func (l *OSSLicensingService) LicenseURL(user *models.SignedInUser) string {
 	return "https://grafana.com/products/enterprise/?utm_source=grafana_footer"
 }
 
+func (l *OSSLicensingService) Init() error {
+	return nil
+}
+
 func (*OSSLicensingService) HasValidLicense() bool {
 	return false
 }
