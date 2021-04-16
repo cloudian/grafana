@@ -42,7 +42,8 @@ export class AdminSettings extends React.PureComponent<Props, State> {
       <Page navModel={navModel}>
         <Page.Contents isLoading={isLoading}>
           <div className="grafana-info-box span8" style={{ margin: '20px 0 25px 0' }}>
-            These system settings are defined in custom.ini (or overridden in ENV variables). To change these you currently need to restart.
+            These system settings are defined in custom.ini (or overridden in ENV variables). To change
+			these you currently need to restart.
           </div>
 
           <table className="filter-table">
