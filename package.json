@@ -1,10 +1,10 @@
 {
-  "author": "Grafana Labs",
+  "author": "Grafana Labs and Cloudian, Inc.",
   "license": "Apache-2.0",
   "private": true,
-  "name": "grafana",
+  "name": "cloudian-grafana",
   "version": "7.5.3",
-  "repository": "github:grafana/grafana",
+  "repository": "github:cloudian/grafana",
   "scripts": {
     "api-tests": "jest --notify --watch --config=devenv/e2e-api-tests/jest.js",
     "build": "node ./node_modules/webpack/bin/webpack.js --config scripts/webpack/webpack.prod.js",
