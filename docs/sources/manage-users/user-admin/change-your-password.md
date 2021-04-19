@@ -1,16 +1,16 @@
 +++
 title = "Change your password"
-description = "How to change your Grafana password"
+description = "How to change your password"
 keywords = ["grafana", "password", "change", "preferences"]
 aliases = ["/docs/grafana/latest/administration/change-your-password/"]
 weight = 200
 +++
 
-# Change your Grafana password
+# Change your password
 
-You can change your Grafana password in the Change Password tab.
+You can change your password in the Change Password tab.
 
-> **Note:** If your Grafana instance uses an external authentication provider, then you might not be able to change your password. Contact your Grafana administrator for more information.
+> **Note:** If your instance uses an external authentication provider, then you might not be able to change your password. Contact your administrator for more information.
 
 ## Change your password
 
