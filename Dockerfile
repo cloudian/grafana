@@ -6,7 +6,8 @@ COPY package.json yarn.lock ./
 COPY packages packages
 
 RUN apk --no-cache add git
-RUN yarn install --pure-lockfile --no-progress
+RUN yarn cache clean
+RUN yarn install --network-concurrency 1 --pure-lockfile --no-progress
 
 COPY tsconfig.json .eslintrc .editorconfig .browserslistrc .prettierrc.js ./
 COPY public public
