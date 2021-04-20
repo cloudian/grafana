@@ -1,11 +1,13 @@
-FROM node:14.15.5-alpine3.13 as js-builder
+FROM node:15.11.0-alpine3.13 as js-builder
 
 WORKDIR /usr/src/app/
 
 COPY package.json yarn.lock ./
 COPY packages packages
 
-RUN yarn install --pure-lockfile --no-progress
+RUN apk --no-cache add git
+RUN yarn cache clean
+RUN yarn install --network-concurrency 1 --pure-lockfile --no-progress
 
 COPY tsconfig.json .eslintrc .editorconfig .browserslistrc .prettierrc.js ./
 COPY public public
