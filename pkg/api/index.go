@@ -393,7 +393,7 @@ func (hs *HTTPServer) setIndexViewData(c *models.ReqContext) (*dtos.IndexViewDat
 		AppName:                 setting.ApplicationName,
 		AppNameBodyClass:        getAppNameBodyClass(hs.License.HasValidLicense()),
 		FavIcon:                 "public/img/cloudian_logo_alt.png",
-		AppleTouchIcon:          "public/img/apple-touch-icon.png",
+		AppleTouchIcon:          "public/img/cloudian_logo_alt.png",
 		AppTitle:                "Cloudian® HyperIQ",
 		NavTree:                 navTree,
 		Sentry:                  &hs.Cfg.Sentry,
