@@ -58,7 +58,7 @@ export class UserPermissions extends PureComponent<Props, State> {
             <table className="filter-table form-inline">
               <tbody>
                 <tr>
-                  <td className="width-16">Grafana Admin</td>
+                  <td className="width-16">Admin</td>
                   {isEditing ? (
                     <td colSpan={2}>
                       <RadioButtonGroup
