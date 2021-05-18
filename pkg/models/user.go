@@ -9,7 +9,7 @@ import (
 var (
 	ErrUserNotFound      = errors.New("user not found")
 	ErrUserAlreadyExists = errors.New("user already exists")
-	ErrLastGrafanaAdmin  = errors.New("cannot remove last grafana admin")
+	ErrLastGrafanaAdmin  = errors.New("cannot remove last admin")
 )
 
 type Password string
