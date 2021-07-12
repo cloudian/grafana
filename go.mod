@@ -15,7 +15,7 @@ require (
 	cloud.google.com/go/storage v1.13.0
 	github.com/BurntSushi/toml v0.3.1
 	github.com/VividCortex/mysqlerr v0.0.0-20170204212430-6c6b55f8796f
-	github.com/aws/aws-sdk-go v1.37.20
+	github.com/aws/aws-sdk-go v1.39.4
 	github.com/beevik/etree v1.1.0
 	github.com/benbjohnson/clock v0.0.0-20161215174838-7dc76406b6d3
 	github.com/bradfitz/gomemcache v0.0.0-20190913173617-a41fca850d0b
@@ -43,7 +43,6 @@ require (
 	github.com/google/go-cmp v0.5.4
 	github.com/google/uuid v1.2.0
 	github.com/gosimple/slug v1.9.0
-	github.com/grafana/grafana-aws-sdk v0.3.0
 	github.com/grafana/grafana-aws-sdk v0.4.0
 	github.com/grafana/grafana-plugin-model v0.0.0-20190930120109-1fc953a61fb4
 	github.com/grafana/grafana-plugin-sdk-go v0.88.0
@@ -86,7 +85,7 @@ require (
 	github.com/yudai/gojsondiff v1.0.0
 	go.opentelemetry.io/collector v0.21.0
 	golang.org/x/crypto v0.0.0-20201221181555-eec23a3978ad
-	golang.org/x/net v0.0.0-20210119194325-5f4716e94777
+	golang.org/x/net v0.0.0-20210614182718-04defd469f4e
 	golang.org/x/oauth2 v0.0.0-20210113205817-d3ed898aa8a3
 	golang.org/x/sync v0.0.0-20201207232520-09787c993a3a
 	golang.org/x/time v0.0.0-20200630173020-3af7569d3a1e
