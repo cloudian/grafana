@@ -37,7 +37,7 @@ func TestRecoveryMiddleware(t *testing.T) {
 
 			assert.Equal(t, 500, sc.resp.Code)
 			assert.Equal(t, "text/html; charset=UTF-8", sc.resp.Header().Get("content-type"))
-			assert.Contains(t, sc.resp.Body.String(), "<title>Grafana - Error</title>")
+			assert.Contains(t, sc.resp.Body.String(), "<title>Cloudian® HyperIQ - Error</title>")
 		})
 	})
 }
