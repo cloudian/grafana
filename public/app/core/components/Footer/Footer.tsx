@@ -14,7 +14,7 @@ export let getFooterLinks = (): FooterLink[] => {
     {
       text: 'Documentation',
       icon: 'document-info',
-      url: 'https://grafana.com/docs/grafana/latest/?utm_source=grafana_footer',
+      url: 'public/docs/hyperiq_guide.pdf',
       target: '_blank',
     },
   ];
