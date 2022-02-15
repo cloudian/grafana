@@ -1767,7 +1767,7 @@ RU5ErkJggg==" transform="matrix(1 0 0 1 -303.575 -717.9606)">
 			<rect x="1810" y="923" class="st6" width="15" height="15"/>
 			<linearGradient id="SVGID_3_" gradientUnits="userSpaceOnUse" x1="1652.2819" y1="990.3539" x2="1698.0414" y2="990.3539">
 				<stop  offset="0" style="stop-color:#FADE2A"/>
-				<stop  offset="1" style="stop-color:#F05A28"/>
+				<stop  offset="1" style="stop-color:#c1d500"/>
 			</linearGradient>
 			<path class="st7" d="M1675.2,1013.2c-12.6,0-22.9-10.3-22.9-22.9s10.3-22.9,22.9-22.9s22.9,10.3,22.9,22.9
 				S1687.8,1013.2,1675.2,1013.2z"/>

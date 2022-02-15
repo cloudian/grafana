@@ -8,13 +8,12 @@ export interface BrandComponentProps {
 }
 
 const LoginLogo: FC<BrandComponentProps> = ({ className }) => {
-  return <img className={className} src="public/img/grafana_icon.svg" alt="Grafana" />;
+  return <img className={className} src="public/img/cloudian_logo.png" alt="Cloudian" />;
 };
 
 const LoginBackground: FC<BrandComponentProps> = ({ className, children }) => {
-  const theme = useTheme();
   const background = css`
-    background: url(public/img/login_background_${theme.isDark ? 'dark' : 'light'}.svg);
+    background: url(public/img/login_bg.jpg);
     background-size: cover;
   `;
 
@@ -22,7 +21,7 @@ const LoginBackground: FC<BrandComponentProps> = ({ className, children }) => {
 };
 
 const MenuLogo: FC<BrandComponentProps> = ({ className }) => {
-  return <img className={className} src="public/img/grafana_icon.svg" alt="Grafana" />;
+  return <img className={className} src="public/img/cloudian_logo.png" alt="Cloudian" />;
 };
 
 const LoginBoxBackground = () => {
@@ -38,16 +37,6 @@ export class Branding {
   static LoginBackground = LoginBackground;
   static MenuLogo = MenuLogo;
   static LoginBoxBackground = LoginBoxBackground;
-  static AppTitle = 'Grafana';
-  static LoginTitle = 'Welcome to Grafana';
-  static GetLoginSubTitle = () => {
-    const slogans = [
-      "Don't get in the way of the data",
-      'Your single pane of glass',
-      'Built better together',
-      'Democratising data',
-    ];
-    const count = slogans.length;
-    return slogans[Math.floor(Math.random() * count)];
-  };
+  static AppTitle = 'Cloudian® HyperIQ';
+  static LoginTitle = 'Welcome to Cloudian® HyperIQ';
 }

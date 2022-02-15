@@ -64,6 +64,7 @@ $red: $red-base;
 $yellow: ${theme.palette.yellow};
 $orange: ${theme.palette.orange};
 $purple: ${theme.palette.purple};
+$green: ${theme.palette.green};
 $variable: ${theme.colors.textBlue};
 
 $brand-primary: ${theme.palette.brandPrimary};
@@ -100,8 +101,8 @@ $text-shadow-faint: 1px 1px 4px rgb(45, 45, 45);
 $textShadow: none;
 
 // gradients
-$brand-gradient-horizontal: linear-gradient(to right, #f05a28 30%, #fbca0a 99%);
-$brand-gradient-vertical: linear-gradient(#f05a28 30%, #fbca0a 99%);
+$brand-gradient-horizontal: linear-gradient(to right, #c1d500 30%, #9a989b 60%, #ffffff 99%);
+$brand-gradient-vertical: linear-gradient(#c1d500 30%, #9a989b 60%, #ffffff 99%);
 
 // Links
 // -------------------------

@@ -31,9 +31,9 @@
 		<stop  offset="4.010540e-02" style="stop-color:#FEE62D"/>
 		<stop  offset="0.1171" style="stop-color:#FED41A"/>
 		<stop  offset="0.1964" style="stop-color:#FDC90F"/>
-		<stop  offset="0.2809" style="stop-color:#FDC60B"/>
-		<stop  offset="0.6685" style="stop-color:#F28F3F"/>
-		<stop  offset="0.8876" style="stop-color:#ED693C"/>
+		<stop  offset="0.2809" style="stop-color:#F2FF80"/>
+		<stop  offset="0.6685" style="stop-color:#C1D500"/>
+		<stop  offset="0.8876" style="stop-color:#A1B300"/>
 		<stop  offset="1" style="stop-color:#E83E39"/>
 	</linearGradient>
 	<path class="st1" d="M39.5,42.3c-0.2,0-0.4,0.1-0.5,0.3c0.1-0.1,0.3-0.1,0.4-0.2C39.4,42.4,39.4,42.3,39.5,42.3z"/>
@@ -42,9 +42,9 @@
 		<stop  offset="4.010540e-02" style="stop-color:#FEE62D"/>
 		<stop  offset="0.1171" style="stop-color:#FED41A"/>
 		<stop  offset="0.1964" style="stop-color:#FDC90F"/>
-		<stop  offset="0.2809" style="stop-color:#FDC60B"/>
-		<stop  offset="0.6685" style="stop-color:#F28F3F"/>
-		<stop  offset="0.8876" style="stop-color:#ED693C"/>
+		<stop  offset="0.2809" style="stop-color:#F2FF80"/>
+		<stop  offset="0.6685" style="stop-color:#C1D500"/>
+		<stop  offset="0.8876" style="stop-color:#A1B300"/>
 		<stop  offset="1" style="stop-color:#E83E39"/>
 	</linearGradient>
 	<path class="st2" d="M63.3,42.3h-4.2h-0.3h-3.2v-7.7c0-0.4-0.3-0.7-0.7-0.7h-7c-0.4,0-0.7,0.3-0.7,0.7v7.7h-0.8h-6.9c0,0,0,0-0.1,0

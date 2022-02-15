@@ -56,7 +56,7 @@
 </linearGradient>
 <linearGradient id="paint2_linear" x1="1652.28" y1="990.354" x2="1698.04" y2="990.354" gradientUnits="userSpaceOnUse">
 <stop stop-color="#FADE2A"/>
-<stop offset="1" stop-color="#F05A28"/>
+<stop offset="1" stop-color="#c1d500"/>
 </linearGradient>
 <linearGradient id="paint3_linear" x1="359.895" y1="128.843" x2="384.895" y2="128.843" gradientUnits="userSpaceOnUse">
 <stop stop-color="#5794F2"/>
