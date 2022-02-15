@@ -118,7 +118,7 @@ const renderUser = (user: UserDTO) => {
       <td className="link-td">
         {user.isAdmin && (
           <a href={editUrl}>
-            <Tooltip placement="top" content="Grafana Admin">
+            <Tooltip placement="top" content="Admin">
               <Icon name="shield" />
             </Tooltip>
           </a>

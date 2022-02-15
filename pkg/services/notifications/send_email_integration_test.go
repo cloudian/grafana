@@ -59,7 +59,7 @@ func TestEmailIntegrationTest(t *testing.T) {
 			So(err, ShouldBeNil)
 
 			sentMsg := <-ns.mailQueue
-			So(sentMsg.From, ShouldEqual, "Grafana Admin <from@address.com>")
+			So(sentMsg.From, ShouldEqual, "Admin <from@address.com>")
 			So(sentMsg.To[0], ShouldEqual, "asdf@asdf.com")
 			err = ioutil.WriteFile("../../../tmp/test_email.html", []byte(sentMsg.Body), 0777)
 			So(err, ShouldBeNil)
