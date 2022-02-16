@@ -26,9 +26,10 @@ WORKDIR $GOPATH/src/github.com/grafana/grafana
 
 COPY go.mod go.sum ./
 
+COPY pkg pkg
+
 RUN go mod verify
 
-COPY pkg pkg
 COPY build.go package.json ./
 
 RUN go run build.go build
