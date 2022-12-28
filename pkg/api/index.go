@@ -250,6 +250,14 @@ func (hs *HTTPServer) getNavTree(c *models.ReqContext, hasEditPerm bool) ([]*dto
 
 	if c.OrgRole == models.ROLE_ADMIN {
 		configNodes = append(configNodes, &dtos.NavLink{
+			Text:        "Plugins",
+			Id:          "plugins",
+			Description: "View and configure plugins",
+			Icon:        "plug",
+			Url:         setting.AppSubUrl + "/plugins",
+		})
+
+		configNodes = append(configNodes, &dtos.NavLink{
 			Text:        "Preferences",
 			Id:          "org-settings",
 			Description: "Organization preferences",
@@ -280,6 +288,7 @@ func (hs *HTTPServer) getNavTree(c *models.ReqContext, hasEditPerm bool) ([]*dto
 	if c.IsGrafanaAdmin {
 		adminNavLinks := []*dtos.NavLink{
 			{Text: "Users", Id: "global-users", Url: setting.AppSubUrl + "/admin/users", Icon: "user"},
+			{Text: "Orgs", Id: "global-orgs", Url: setting.AppSubUrl + "/admin/orgs", Icon: "building"},
 			{Text: "Settings", Id: "server-settings", Url: setting.AppSubUrl + "/admin/settings", Icon: "sliders-v-alt"},
 			{Text: "Stats", Id: "server-stats", Url: setting.AppSubUrl + "/admin/stats", Icon: "graph-bar"},
 		}
@@ -302,9 +311,14 @@ func (hs *HTTPServer) getNavTree(c *models.ReqContext, hasEditPerm bool) ([]*dto
 		})
 	}
 
+	helpVersion := fmt.Sprintf(`%s v%s (%s)`, setting.ApplicationName, setting.BuildVersion, setting.BuildCommit)
+	if hs.Cfg.AnonymousHideVersion && !c.IsSignedIn {
+		helpVersion = setting.ApplicationName
+	}
+
 	navTree = append(navTree, &dtos.NavLink{
 		Text:         "Help",
-		SubTitle:     "",
+		SubTitle:     helpVersion,
 		Id:           "help",
 		Url:          "#",
 		Icon:         "question-circle",
