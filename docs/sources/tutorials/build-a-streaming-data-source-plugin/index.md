@@ -138,7 +138,7 @@ return &backend.SubscribeStreamResponse{
 }, nil
 ```
 
-As soon as the first subscriber joins a channel Grafana opens a unidirectional stream to consume streaming frames from a plugin. To handle this and to push data towards clients we implement a `RunStream` method which provides a way to push JSON data into a channel. So we can push data frame like this (error handling skipped):
+As soon as the first subscriber joins a channel it opens a unidirectional stream to consume streaming frames from a plugin. To handle this and to push data towards clients we implement a `RunStream` method which provides a way to push JSON data into a channel. So we can push data frame like this (error handling skipped):
 
 ```go
 // Send frame to stream including both frame schema and data frame parts.
@@ -147,7 +147,7 @@ _ = sender.SendFrame(frame, data.IncludeAll)
 
 Open example datasource query editor and make sure `With Streaming` toggle is on. After doing this you should see data displayed and then periodically updated by streaming frames coming periodically from `RunStream` method.
 
-The important thing to note is that Grafana opens a unidirectional stream only once per channel upon the first subscriber joined. Every other subscription request will be still authorized by `SubscribeStream` method but the new `RunStream` won't be issued. I.e. you can have many active subscribers but only one running stream. At this moment this guarantee works for a single Grafana instance, we are planning to support this for highly-available Grafana setup (many Grafana instances behind load-balancer) in future releases.
+The important thing to note is that it opens a unidirectional stream only once per channel upon the first subscriber joined. Every other subscription request will be still authorized by `SubscribeStream` method but the new `RunStream` won't be issued. I.e. you can have many active subscribers but only one running stream. At this moment this guarantee works for a single Grafana instance, we are planning to support this for highly-available Grafana setup (many Grafana instances behind load-balancer) in future releases.
 
 The stream will be automatically closed as soon as all subscriber users left.
 

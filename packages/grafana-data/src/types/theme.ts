@@ -164,6 +164,7 @@ export interface GrafanaTheme extends GrafanaThemeCommons {
     // Accent colors
     redBase: string;
     redShade: string;
+    green: string;
     greenBase: string;
     greenShade: string;
     red: string;

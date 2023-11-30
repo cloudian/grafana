@@ -24,7 +24,7 @@ export const NotificationSettings = ({ currentFormValues, imageRendererAvailable
       {currentFormValues.uploadImage && !imageRendererAvailable && (
         <InfoBox title="No image renderer available/installed">
           Grafana cannot find an image renderer to capture an image for the notification. Please make sure the Grafana
-          Image Renderer plugin is installed. Please contact your Grafana administrator to install the plugin.
+          Image Renderer plugin is installed. Please contact your HyperIQ administrator to install the plugin.
         </InfoBox>
       )}
       <Field>

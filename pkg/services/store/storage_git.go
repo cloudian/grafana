@@ -337,7 +337,7 @@ func (s *rootStorageGit) Write(ctx context.Context, cmd *WriteValueRequest) (*Wr
 
 	msg := cmd.Message
 	if msg == "" {
-		msg = "changes from grafana ui"
+		msg = "changes from ui"
 	}
 	usr := cmd.User
 	if usr == nil {

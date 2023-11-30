@@ -10,7 +10,7 @@ menutitle: Send panel to support
 weight: 100
 ---
 
-# Send a panel to Grafana Labs support
+# Send a panel to Labs support
 
 When you encounter problems with any of your visualizations, you can send the panel JSON model to Grafana Labs Technical Support and request help with troubleshooting your issue.
 
@@ -22,7 +22,7 @@ The panel that you send includes all query response data and all visualizations 
 
 1. Click the menu and select **More > Get help**.
 
-   Grafana opens a standalone support dashboard that contains the data you are sending to Grafana Labs Technical Support.
+   It opens a standalone support dashboard that contains the data you are sending to Grafana Labs Technical Support.
 
    If you enable iframes, the support dashboard includes the visualization that looks similar to the following image.
 

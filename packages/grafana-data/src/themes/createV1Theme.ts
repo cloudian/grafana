@@ -125,6 +125,7 @@ export function createV1Theme(theme: Omit<GrafanaTheme2, 'v1'>): GrafanaTheme {
     gray7: '#fbfbfb', // not used in dark theme
     redBase: '#e02f44',
     redShade: '#c4162a',
+    green: '#b7eb19',
     greenBase: '#299c46',
     greenShade: '#23843b',
     red: '#d44a3a',

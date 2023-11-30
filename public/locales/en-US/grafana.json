@@ -238,10 +238,6 @@
     "explore": {
       "title": "Explore"
     },
-    "global-orgs": {
-      "subtitle": "Isolated instances of Grafana running on the same server",
-      "title": "Organizations"
-    },
     "global-users": {
       "subtitle": "Manage users in Grafana",
       "title": "Users"
@@ -283,10 +279,6 @@
     "playlists": {
       "subtitle": "Groups of dashboards that are displayed in a sequence",
       "title": "Playlists"
-    },
-    "plugins": {
-      "subtitle": "Extend the Grafana experience with plugins",
-      "title": "Plugins"
     },
     "profile/notifications": {
       "title": "Notification history"
@@ -471,7 +463,7 @@
       "info-text": "Create a direct link to this dashboard or panel, customized with the options below.",
       "link-url": "Link URL",
       "render-alert": "Image renderer plugin not installed",
-      "render-instructions": "To render a panel image, you must install the&nbsp;<1>Grafana image renderer plugin</1>. Please contact your Grafana administrator to install the plugin.",
+      "render-instructions": "To render a panel image, you must install the&nbsp;<1>Grafana image renderer plugin</1>. Please contact your HyperIQ administrator to install the plugin.",
       "rendered-image": "Direct link rendered image",
       "save-alert": "Dashboard is not saved",
       "save-dashboard": "To render a panel image, you must save the dashboard first.",

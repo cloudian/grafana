@@ -53,7 +53,7 @@ func readConfig(configFile string) (*ldap.Config, error) {
 
 		for _, groupMap := range server.Groups {
 			if groupMap.OrgRole == "" && groupMap.IsGrafanaAdmin == nil {
-				return nil, fmt.Errorf("LDAP group mapping: organization role or grafana admin status is required")
+				return nil, fmt.Errorf("LDAP group mapping: admin status is required")
 			}
 
 			if groupMap.OrgId == 0 {

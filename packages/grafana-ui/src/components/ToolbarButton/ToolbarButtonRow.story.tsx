@@ -28,10 +28,10 @@ export const Basic: ComponentStory<typeof ToolbarButtonRow> = (args) => {
       <ToolbarButtonRow {...args}>
         <ToolbarButton>Just text</ToolbarButton>
         <ToolbarButton icon="sync" tooltip="Sync" />
-        <ToolbarButton imgSrc="./grafana_icon.svg">With imgSrc</ToolbarButton>
+        <ToolbarButton imgSrc="./cloudian_logo.png">With imgSrc</ToolbarButton>
         <ToolbarButton>Just text</ToolbarButton>
         <ToolbarButton icon="sync" tooltip="Sync" />
-        <ToolbarButton imgSrc="./grafana_icon.svg">With imgSrc</ToolbarButton>
+        <ToolbarButton imgSrc="./cloudian_logo.png">With imgSrc</ToolbarButton>
       </ToolbarButtonRow>
     </DashboardStoryCanvas>
   );

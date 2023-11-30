@@ -14,7 +14,7 @@ func GetEntityKindInfo() entity.EntityKindInfo {
 	return entity.EntityKindInfo{
 		ID:          entity.StandardKindDashboard,
 		Name:        "Dashboard",
-		Description: "Define a grafana dashboard layout",
+		Description: "Define a dashboard layout",
 	}
 }
 

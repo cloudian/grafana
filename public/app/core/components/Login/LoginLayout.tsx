@@ -24,7 +24,6 @@ export interface LoginLayoutProps {
 export const LoginLayout = ({ children, branding }: React.PropsWithChildren<LoginLayoutProps>) => {
   const loginStyles = useStyles2(getLoginStyles);
   const [startAnim, setStartAnim] = useState(false);
-  const subTitle = branding?.loginSubtitle ?? Branding.GetLoginSubTitle();
   const loginTitle = branding?.loginTitle ?? Branding.LoginTitle;
   const loginBoxBackground = branding?.loginBoxBackground || Branding.LoginBoxBackground();
   const loginLogo = branding?.loginLogo;
@@ -40,7 +39,6 @@ export const LoginLayout = ({ children, branding }: React.PropsWithChildren<Logi
           <Branding.LoginLogo className={loginStyles.loginLogo} logo={loginLogo} />
           <div className={loginStyles.titleWrapper}>
             <h1 className={loginStyles.mainTitle}>{loginTitle}</h1>
-            {subTitle && <h3 className={loginStyles.subTitle}>{subTitle}</h3>}
           </div>
         </div>
         <div className={loginStyles.loginOuterBox}>{children}</div>

@@ -38,7 +38,7 @@ export function UserPermissions({ isGrafanaAdmin, onGrafanaAdminChange }: Props)
           <table className="filter-table form-inline">
             <tbody>
               <tr>
-                <td className="width-16">Grafana Admin</td>
+                <td className="width-16">HyperIQ Admin</td>
                 {isEditing ? (
                   <td colSpan={2}>
                     <RadioButtonGroup
