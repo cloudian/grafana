@@ -194,11 +194,3 @@ deployment_tools_config.json
 
 # Temporary file for backporting PRs
 .pr-body.txt
-.yarn/cache/tether-drop-https-3382d2649f-a10a7337d5.zip
-.yarn/plugins/@yarnpkg/plugin-interactive-tools.cjs
-.yarn/plugins/@yarnpkg/plugin-typescript.cjs
-.yarn/releases/yarn-3.4.1.cjs
-.yarn/releases/yarn-4.0.2.cjs
-.yarnrc.yml
-package.json
-yarn.lock
