@@ -221,19 +221,6 @@ func (s *ServiceImpl) addHelpLinks(treeRoot *navtree.NavTreeRoot, c *contextmode
 			ac.EvalPermission(supportbundlesimpl.ActionRead),
 			ac.EvalPermission(supportbundlesimpl.ActionCreate),
 		)
-
-		if isSupportBundlesEnabled(s) && hasAccess(ac.ReqGrafanaAdmin, supportBundleAccess) {
-			supportBundleNode := &navtree.NavLink{
-				Text:       "Support bundles",
-				Id:         "support-bundles",
-				Url:        "/support-bundles",
-				Icon:       "wrench",
-				Section:    navtree.NavSectionConfig,
-				SortWeight: navtree.WeightHelp,
-			}
-
-			helpNode.Children = append(helpNode.Children, supportBundleNode)
-		}
 	}
 }
 
@@ -533,16 +520,6 @@ func (s *ServiceImpl) buildDataConnectionsNavLink(c *contextmodel.ReqContext) *n
 	baseUrl := s.cfg.AppSubURL + "/connections"
 
 	if hasAccess(ac.ReqOrgAdmin, datasources.ConfigurationPageAccess) {
-		// Connect data
-		children = append(children, &navtree.NavLink{
-			Id:        "connections-connect-data",
-			Text:      "Connect data",
-			SubTitle:  "Browse and create new connections",
-			IsSection: true,
-			Url:       s.cfg.AppSubURL + "/connections/connect-data",
-			Children:  []*navtree.NavLink{},
-		})
-
 		// Your connections
 		children = append(children, &navtree.NavLink{
 			Id:       "connections-your-connections",
