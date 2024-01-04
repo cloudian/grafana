@@ -18,7 +18,6 @@ import (
 	"github.com/grafana/grafana/pkg/services/pluginsintegration/pluginsettings"
 	pref "github.com/grafana/grafana/pkg/services/preference"
 	"github.com/grafana/grafana/pkg/services/star"
-	"github.com/grafana/grafana/pkg/services/supportbundles/supportbundlesimpl"
 	"github.com/grafana/grafana/pkg/setting"
 )
 
