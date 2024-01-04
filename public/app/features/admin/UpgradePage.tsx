@@ -21,10 +21,6 @@ export function UpgradePage({ navModel }: Props) {
     <Page navModel={navModel}>
       <Page.Contents>
         <ServerStats />
-        <UpgradeInfo
-          editionNotice="You are running the open-source version of Grafana.
-        You have to install the Enterprise edition in order enable Enterprise features."
-        />
       </Page.Contents>
     </Page>
   );
@@ -35,22 +31,6 @@ const titleStyles = { fontWeight: 500, fontSize: '26px', lineHeight: '123%' };
 interface UpgradeInfoProps {
   editionNotice?: string;
 }
-
-export const UpgradeInfo = ({ editionNotice }: UpgradeInfoProps) => {
-  const styles = useStyles2(getStyles);
-
-  return (
-    <>
-      <h2 className={styles.title}>Enterprise license</h2>
-      <LicenseChrome header="Grafana Enterprise" subheader="Get your free trial" editionNotice={editionNotice}>
-        <div className={styles.column}>
-          <FeatureInfo />
-          <ServiceInfo />
-        </div>
-      </LicenseChrome>
-    </>
-  );
-};
 
 const getStyles = (theme: GrafanaTheme2) => {
   return {
