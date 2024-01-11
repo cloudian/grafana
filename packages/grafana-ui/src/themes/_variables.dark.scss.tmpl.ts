@@ -74,6 +74,7 @@ $red: $red-base;
 $yellow: ${theme.v1.palette.yellow};
 $orange: ${theme.v1.palette.orange};
 $purple: ${theme.v1.palette.purple};
+$green: ${theme.v1.palette.green};
 $variable: ${theme.colors.primary.text};
 
 $brand-primary: ${theme.v1.palette.orange};

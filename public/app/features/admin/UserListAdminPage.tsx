@@ -223,7 +223,7 @@ const UserListItem = memo(({ user, showLicensedRole }: UserListItemProps) => {
         <OrgUnits units={user.orgs} icon={'building'} />
         {user.isAdmin && (
           <a href={editUrl} aria-label={getUsersAriaLabel(user.name)}>
-            <Tooltip placement="top" content="Grafana Admin">
+            <Tooltip placement="top" content="HyperIQ Admin">
               <Icon name="shield" />
             </Tooltip>
           </a>

@@ -28,7 +28,7 @@ const Message = ({ requiredImageRendererPluginVersion }: { requiredImageRenderer
     return (
       <>
         You must update the <MessageLink text="Grafana image renderer plugin" /> to version{' '}
-        {requiredImageRendererPluginVersion} to enable dashboard previews. Please contact your Grafana administrator to
+        {requiredImageRendererPluginVersion} to enable dashboard previews. Please contact your HyperIQ administrator to
         update the plugin.
       </>
     );
@@ -37,7 +37,7 @@ const Message = ({ requiredImageRendererPluginVersion }: { requiredImageRenderer
   return (
     <>
       You must install the <MessageLink text="Grafana image renderer plugin" /> to enable dashboard previews. Please
-      contact your Grafana administrator to install the plugin.
+      contact your HyperIQ administrator to install the plugin.
     </>
   );
 };

@@ -193,7 +193,6 @@ func ApplyAdminIA(root *NavTreeRoot) {
 			adminNodeLinks = append(adminNodeLinks, orgSettings)
 		}
 		adminNodeLinks = AppendIfNotNil(adminNodeLinks, root.FindById("server-settings"))
-		adminNodeLinks = AppendIfNotNil(adminNodeLinks, root.FindById("global-orgs"))
 
 		adminNodeLinks = AppendIfNotNil(adminNodeLinks, root.FindById("upgrading"))
 		adminNodeLinks = AppendIfNotNil(adminNodeLinks, root.FindById("licensing"))

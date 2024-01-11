@@ -131,14 +131,14 @@ func (hs *HTTPServer) setIndexViewData(c *contextmodel.ReqContext) (*dtos.IndexV
 		NewGrafanaVersionExists:             hs.grafanaUpdateChecker.UpdateAvailable(),
 		AppName:                             setting.ApplicationName,
 		AppNameBodyClass:                    "app-grafana",
-		FavIcon:                             "public/img/fav32.png",
-		AppleTouchIcon:                      "public/img/apple-touch-icon.png",
-		AppTitle:                            "Grafana",
+		FavIcon:                             "public/img/cloudian_logo_alt.png",
+		AppleTouchIcon:                      "public/img/cloudian_logo_alt.png",
+		AppTitle:                            "Cloudian® HyperIQ",
 		NavTree:                             navTree,
 		Sentry:                              &hs.Cfg.Sentry,
 		Nonce:                               c.RequestNonce,
 		ContentDeliveryURL:                  hs.Cfg.GetContentDeliveryURL(hs.License.ContentDeliveryPrefix()),
-		LoadingLogo:                         "public/img/grafana_icon.svg",
+		LoadingLogo:                         "public/img/cloudian_logo.png",
 	}
 
 	if !hs.AccessControl.IsDisabled() {

@@ -72,12 +72,10 @@ docker_build () {
   docker build \
     --build-arg BASE_IMAGE=${base_image} \
     --build-arg GRAFANA_TGZ=${grafana_tgz} \
-    --build-arg GO_SRC=tgz-builder \
-    --build-arg JS_SRC=tgz-builder \
-    --build-arg RUN_SH=./run.sh \
+    --build-arg RUN_SH=./packaging/docker/run.sh \
     --tag "${tag}" \
     --no-cache=true \
-    --file ../../Dockerfile \
+    --file Dockerfile \
     .
 }
 

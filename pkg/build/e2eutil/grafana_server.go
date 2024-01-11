@@ -32,7 +32,7 @@ func (g *GrafanaServer) Wait() {
 	for {
 		select {
 		case <-timeoutExceeded:
-			log.Printf("grafana server failed to start after %d second(s) timeout", timeout)
+			log.Printf("server failed to start after %d second(s) timeout", timeout)
 			os.Exit(1)
 
 		case <-ticker.C:

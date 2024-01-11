@@ -8,7 +8,6 @@ import (
 	"github.com/grafana/grafana/pkg/services/featuremgmt"
 	"github.com/grafana/grafana/pkg/services/navtree"
 	"github.com/grafana/grafana/pkg/services/org"
-	"github.com/grafana/grafana/pkg/services/pluginsintegration/pluginaccesscontrol"
 	"github.com/grafana/grafana/pkg/services/serviceaccounts"
 )
 
@@ -55,17 +54,6 @@ func (s *ServiceImpl) getOrgAdminNode(c *contextmodel.ReqContext) (*navtree.NavL
 			SubTitle: "Groups of users that have common dashboard and permission needs",
 			Icon:     "users-alt",
 			Url:      s.cfg.AppSubURL + "/org/teams",
-		})
-	}
-
-	// FIXME: while we don't have a permissions for listing plugins the legacy check has to stay as a default
-	if pluginaccesscontrol.ReqCanAdminPlugins(s.cfg)(c) || hasAccess(pluginaccesscontrol.ReqCanAdminPlugins(s.cfg), pluginaccesscontrol.AdminAccessEvaluator) {
-		configNodes = append(configNodes, &navtree.NavLink{
-			Text:     "Plugins",
-			Id:       "plugins",
-			SubTitle: "Extend the Grafana experience with plugins",
-			Icon:     "plug",
-			Url:      s.cfg.AppSubURL + "/plugins",
 		})
 	}
 
@@ -118,8 +106,6 @@ func (s *ServiceImpl) getOrgAdminNode(c *contextmodel.ReqContext) (*navtree.NavL
 
 func (s *ServiceImpl) getServerAdminNode(c *contextmodel.ReqContext) *navtree.NavLink {
 	hasAccess := ac.HasAccess(s.accessControl, c)
-	hasGlobalAccess := ac.HasGlobalAccess(s.accessControl, s.accesscontrolService, c)
-	orgsAccessEvaluator := ac.EvalPermission(ac.ActionOrgsRead)
 	adminNavLinks := []*navtree.NavLink{}
 
 	if s.features.IsEnabled(featuremgmt.FlagTopnav) {
@@ -134,12 +120,6 @@ func (s *ServiceImpl) getServerAdminNode(c *contextmodel.ReqContext) *navtree.Na
 				Text: "Users", SubTitle: "Manage and create users across the whole Grafana server", Id: "global-users", Url: s.cfg.AppSubURL + "/admin/users", Icon: "user",
 			})
 		}
-	}
-
-	if hasGlobalAccess(ac.ReqGrafanaAdmin, orgsAccessEvaluator) {
-		adminNavLinks = append(adminNavLinks, &navtree.NavLink{
-			Text: "Organizations", SubTitle: "Isolated instances of Grafana running on the same server", Id: "global-orgs", Url: s.cfg.AppSubURL + "/admin/orgs", Icon: "building",
-		})
 	}
 
 	if hasAccess(ac.ReqGrafanaAdmin, ac.EvalPermission(ac.ActionSettingsRead)) {

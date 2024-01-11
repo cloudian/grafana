@@ -238,10 +238,6 @@
     "explore": {
       "title": "Explorar"
     },
-    "global-orgs": {
-      "subtitle": "Instancias aisladas de Grafana ejecutándose en el mismo servidor",
-      "title": "Organizaciones"
-    },
     "global-users": {
       "subtitle": "Gestionar usuarios de Grafana",
       "title": "Usuarios"

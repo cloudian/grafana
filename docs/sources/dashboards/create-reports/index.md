@@ -200,7 +200,7 @@ You can generate and save PDF files of any dashboard.
 1. On the PDF tab, select a layout option for the exported dashboard: **Portrait** or **Landscape**.
 1. Click **Save as PDF** to render the dashboard as a PDF file.
 
-   Grafana opens the PDF file in a new window or browser tab.
+   It opens the PDF file in a new window or browser tab.
 
 ## Send a report via the API
 
@@ -249,11 +249,11 @@ You can customize the branding options.
 
 Report branding:
 
-- **Company logo:** Company logo displayed in the report PDF. It can be configured by specifying a URL, or by uploading a file. Defaults to the Grafana logo.
+- **Company logo:** Company logo displayed in the report PDF. It can be configured by specifying a URL, or by uploading a file. Defaults to the Cloudian logo.
 
 Email branding:
 
-- **Company logo:** Company logo displayed in the report email. It can be configured by specifying a URL, or by uploading a file. Defaults to the Grafana logo.
+- **Company logo:** Company logo displayed in the report email. It can be configured by specifying a URL, or by uploading a file. Defaults to the Cloudian logo.
 - **Email footer:** Toggle to enable the report email footer. Select **Sent by** or **None**.
 - **Footer link text:** Text of the link in the report email footer. Defaults to `Grafana`.
 - **Footer link URL:** Link of the report email footer.

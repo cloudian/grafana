@@ -1,7 +1,6 @@
 package navtreeimpl
 
 import (
-	"fmt"
 	"sort"
 
 	"github.com/grafana/grafana/pkg/api/dtos"
@@ -19,7 +18,6 @@ import (
 	"github.com/grafana/grafana/pkg/services/pluginsintegration/pluginsettings"
 	pref "github.com/grafana/grafana/pkg/services/preference"
 	"github.com/grafana/grafana/pkg/services/star"
-	"github.com/grafana/grafana/pkg/services/supportbundles/supportbundlesimpl"
 	"github.com/grafana/grafana/pkg/setting"
 )
 
@@ -101,7 +99,7 @@ func (s *ServiceImpl) GetNavTree(c *contextmodel.ReqContext, hasEditPerm bool, p
 			Id:         navtree.NavIDDashboards,
 			SubTitle:   "Create and manage dashboards to visualize your data",
 			Icon:       "apps",
-			Url:        s.cfg.AppSubURL + "/dashboards",
+			Url:        s.cfg.AppSubURL + "/dashboards?tag=HyperIQ",
 			SortWeight: navtree.WeightDashboard,
 			Section:    navtree.NavSectionCore,
 			Children:   dashboardChildLinks,
@@ -204,14 +202,9 @@ func isSupportBundlesEnabled(s *ServiceImpl) bool {
 
 func (s *ServiceImpl) addHelpLinks(treeRoot *navtree.NavTreeRoot, c *contextmodel.ReqContext) {
 	if setting.HelpEnabled {
-		helpVersion := fmt.Sprintf(`%s v%s (%s)`, setting.ApplicationName, setting.BuildVersion, setting.BuildCommit)
-		if s.cfg.AnonymousHideVersion && !c.IsSignedIn {
-			helpVersion = setting.ApplicationName
-		}
-
 		helpNode := &navtree.NavLink{
 			Text:       "Help",
-			SubTitle:   helpVersion,
+			SubTitle:   "",
 			Id:         "help",
 			Url:        "#",
 			Icon:       "question-circle",
@@ -221,25 +214,6 @@ func (s *ServiceImpl) addHelpLinks(treeRoot *navtree.NavTreeRoot, c *contextmode
 		}
 
 		treeRoot.AddSection(helpNode)
-
-		hasAccess := ac.HasAccess(s.accessControl, c)
-		supportBundleAccess := ac.EvalAny(
-			ac.EvalPermission(supportbundlesimpl.ActionRead),
-			ac.EvalPermission(supportbundlesimpl.ActionCreate),
-		)
-
-		if isSupportBundlesEnabled(s) && hasAccess(ac.ReqGrafanaAdmin, supportBundleAccess) {
-			supportBundleNode := &navtree.NavLink{
-				Text:       "Support bundles",
-				Id:         "support-bundles",
-				Url:        "/support-bundles",
-				Icon:       "wrench",
-				Section:    navtree.NavSectionConfig,
-				SortWeight: navtree.WeightHelp,
-			}
-
-			helpNode.Children = append(helpNode.Children, supportBundleNode)
-		}
 	}
 }
 
@@ -344,7 +318,7 @@ func (s *ServiceImpl) buildDashboardNavLinks(c *contextmodel.ReqContext, hasEdit
 
 	if !s.features.IsEnabled(featuremgmt.FlagTopnav) {
 		dashboardChildNavs = append(dashboardChildNavs, &navtree.NavLink{
-			Text: "Browse", Id: navtree.NavIDDashboardsBrowse, Url: s.cfg.AppSubURL + "/dashboards", Icon: "sitemap",
+			Text: "Browse", Id: navtree.NavIDDashboardsBrowse, Url: s.cfg.AppSubURL + "/dashboards?tag=HyperIQ", Icon: "sitemap",
 		})
 	}
 
@@ -539,16 +513,6 @@ func (s *ServiceImpl) buildDataConnectionsNavLink(c *contextmodel.ReqContext) *n
 	baseUrl := s.cfg.AppSubURL + "/connections"
 
 	if hasAccess(ac.ReqOrgAdmin, datasources.ConfigurationPageAccess) {
-		// Connect data
-		children = append(children, &navtree.NavLink{
-			Id:        "connections-connect-data",
-			Text:      "Connect data",
-			SubTitle:  "Browse and create new connections",
-			IsSection: true,
-			Url:       s.cfg.AppSubURL + "/connections/connect-data",
-			Children:  []*navtree.NavLink{},
-		})
-
 		// Your connections
 		children = append(children, &navtree.NavLink{
 			Id:       "connections-your-connections",
