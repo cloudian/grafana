@@ -107,7 +107,7 @@ describe('Plugin details page', () => {
     Object.defineProperty(window, 'location', { configurable: true, value: originalWindowLocation });
   });
 
-  describe('viewed as user with grafana admin permissions', () => {
+  describe('viewed as user with hyperiq admin permissions', () => {
     beforeAll(() => {
       mockUserPermissions({
         isAdmin: true,
@@ -835,7 +835,7 @@ describe('Plugin details page', () => {
     });
   });
 
-  describe('viewed as user without grafana admin permissions', () => {
+  describe('viewed as user without hyperiq admin permissions', () => {
     beforeAll(() => {
       mockUserPermissions({
         isAdmin: false,

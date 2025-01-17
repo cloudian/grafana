@@ -13,7 +13,7 @@ weight: 900
 
 # Feature toggles
 
-Grafana incorporates feature toggles which let you introduce new functionality safeguarded by control flags. This allows Grafana administrators the flexibility to determine the appropriate timing for enabling or disabling specific features.
+Grafana incorporates feature toggles which let you introduce new functionality safeguarded by control flags. This allows HyperIQ administrators the flexibility to determine the appropriate timing for enabling or disabling specific features.
 For detailed information about particular features and how they operate, refer to [Configure Feature Toggles](https://grafana.com/docs/grafana/<GRAFANA_VERSION>/setup-grafana/configure-grafana/feature-toggles/).
 
 ## Manage feature toggles

@@ -371,7 +371,7 @@ describe('AppRootPage', () => {
       expect(await screen.findByText('my great component')).toBeVisible();
     });
 
-    it('a Grafana Admin should be able to see any page without action specifier', async () => {
+    it('a HyperIQ Admin should be able to see any page without action specifier', async () => {
       contextSrv.isGrafanaAdmin = true;
 
       // Viewer has access to a plugin entry page

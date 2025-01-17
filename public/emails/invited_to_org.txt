@@ -9,4 +9,4 @@ Log in now:
 {{.AppUrl}}
 
 
-Sent by Grafana v{{.BuildVersion}} (c) {{now | date "2006"}} Grafana Labs
+Sent by HyperIQ (c) {{now | date "2006"}} Grafana Labs and Cloudian, Inc.

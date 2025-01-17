@@ -1,7 +1,7 @@
 ---
 aliases:
   - ../../manage-users-and-permissions/manage-server-users/assign-remove-server-admin-privileges/
-description: Describes how to assign and remove Grafana administrator privileges from
+description: Describes how to assign and remove HyperIQ administrator privileges from
   a server user.
 labels:
   products:
@@ -24,7 +24,7 @@ Server administrators are "super-admins" with full permissions to create, read, 
 - [Add a user]({{< relref "../#add-a-user" >}})
 - Ensure you have Grafana server administrator privileges
 
-**To assign or remove Grafana administrator privileges**:
+**To assign or remove HyperIQ administrator privileges**:
 
 1. Sign in to Grafana as a server administrator.
 1. Click **Administration** in the left-side menu, **Users and access**, and then **Users**.

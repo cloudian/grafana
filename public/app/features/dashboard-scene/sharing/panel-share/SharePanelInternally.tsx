@@ -97,7 +97,7 @@ function SharePanelInternallyRenderer({ model }: SceneComponentProps<SharePanelI
               >
                 Grafana image renderer plugin
               </a>
-              . Please contact your Grafana administrator to install the plugin.
+              . Please contact your HyperIQ administrator to install the plugin.
             </Trans>
           </Alert>
         )}

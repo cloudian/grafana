@@ -1670,10 +1670,6 @@
     "frontend-app": {
       "title": "Front-end"
     },
-    "global-orgs": {
-      "subtitle": "Instâncias isoladas do Grafana em execução no mesmo servidor",
-      "title": "Organizações"
-    },
     "global-users": {
       "subtitle": "Gerencie usuários no Grafana",
       "title": "Usuários"

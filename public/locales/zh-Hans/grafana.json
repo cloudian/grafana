@@ -1660,10 +1660,6 @@
     "frontend-app": {
       "title": "前端"
     },
-    "global-orgs": {
-      "subtitle": "在同一服务器上运行的 Grafana 的孤立实例",
-      "title": "组织"
-    },
     "global-users": {
       "subtitle": "在 Grafana 中管理用户",
       "title": "用户"
