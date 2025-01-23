@@ -69,6 +69,7 @@ $border1: ${theme.colors.border.medium};
 // -------------------------
 $blue: ${theme.colors.primary.text};
 $red: $red-base;
+$green: ${theme.v1.palette.green};
 $yellow: ${theme.v1.palette.yellow};
 $orange: ${theme.v1.palette.orange};
 $purple: ${theme.v1.palette.purple};

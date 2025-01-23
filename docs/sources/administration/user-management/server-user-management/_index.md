@@ -67,7 +67,7 @@ This section contains basic user information, which users can update.
 
 #### Permissions
 
-This indicates whether the user account has the Grafana administrator flag applied. If the flag is set to **Yes**, then the user is a Grafana server administrator.
+This indicates whether the user account has the HyperIQ administrator flag applied. If the flag is set to **Yes**, then the user is a Grafana server administrator.
 
 #### Organizations
 

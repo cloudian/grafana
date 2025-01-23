@@ -352,13 +352,6 @@ export const navIndex: NavIndex = {
             url: '/admin/users',
           },
           {
-            id: 'global-orgs',
-            text: 'Organizations',
-            subTitle: 'Isolated instances of Grafana running on the same server',
-            icon: 'building',
-            url: '/admin/orgs',
-          },
-          {
             id: 'server-settings',
             text: 'Settings',
             subTitle: 'View the settings defined in your Grafana config',
@@ -446,13 +439,6 @@ export const navIndex: NavIndex = {
         url: '/admin/users',
       },
       {
-        id: 'global-orgs',
-        text: 'Organizations',
-        subTitle: 'Isolated instances of Grafana running on the same server',
-        icon: 'building',
-        url: '/admin/orgs',
-      },
-      {
         id: 'server-settings',
         text: 'Settings',
         subTitle: 'View the settings defined in your Grafana config',
@@ -473,13 +459,6 @@ export const navIndex: NavIndex = {
     subTitle: 'Manage and create users across the whole Grafana server',
     icon: 'user',
     url: '/admin/users',
-  },
-  'global-orgs': {
-    id: 'global-orgs',
-    text: 'Organizations',
-    subTitle: 'Isolated instances of Grafana running on the same server',
-    icon: 'building',
-    url: '/admin/orgs',
   },
   'server-settings': {
     id: 'server-settings',

@@ -24,7 +24,7 @@ export default function InternalAlertmanager({ onEditConfiguration }: Props) {
   return (
     <AlertmanagerCard
       name={BUILTIN_ALERTMANAGER_NAME}
-      logo="public/img/grafana_icon.svg"
+      logo="public/img/cloudian_logo.png"
       status={status}
       receiving={isReceiving}
       onEditConfiguration={handleEditConfiguration}

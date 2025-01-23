@@ -1899,7 +1899,7 @@ export const navIndex: NavIndex = {
   admin: {
     id: 'admin',
     text: 'Server Admin',
-    subTitle: 'Manage all users and orgs',
+    subTitle: 'Manage all users',
     icon: 'shield',
     url: '/admin/users',
     sortWeight: -1200,
@@ -1910,12 +1910,6 @@ export const navIndex: NavIndex = {
         text: 'Users',
         icon: 'user',
         url: '/admin/users',
-      },
-      {
-        id: 'global-orgs',
-        text: 'Orgs',
-        icon: 'building',
-        url: '/admin/orgs',
       },
       {
         id: 'server-settings',
@@ -1945,7 +1939,7 @@ export const navIndex: NavIndex = {
     parentItem: {
       id: 'admin',
       text: 'Server Admin',
-      subTitle: 'Manage all users and orgs',
+      subTitle: 'Manage all users',
       icon: 'shield',
       url: '/admin/users',
       sortWeight: -1200,
@@ -1956,59 +1950,6 @@ export const navIndex: NavIndex = {
           text: 'Users',
           icon: 'user',
           url: '/admin/users',
-        },
-        {
-          id: 'global-orgs',
-          text: 'Orgs',
-          icon: 'building',
-          url: '/admin/orgs',
-        },
-        {
-          id: 'server-settings',
-          text: 'Settings',
-          icon: 'sliders-v-alt',
-          url: '/admin/settings',
-        },
-        {
-          id: 'admin-plugins',
-          text: 'Plugins',
-          icon: 'plug',
-          url: '/admin/plugins',
-        },
-        {
-          id: 'upgrading',
-          text: 'Stats and license',
-          icon: 'unlock',
-          url: '/admin/upgrading',
-        },
-      ],
-    },
-  },
-  'global-orgs': {
-    id: 'global-orgs',
-    text: 'Orgs',
-    icon: 'building',
-    url: '/admin/orgs',
-    parentItem: {
-      id: 'admin',
-      text: 'Server Admin',
-      subTitle: 'Manage all users and orgs',
-      icon: 'shield',
-      url: '/admin/users',
-      sortWeight: -1200,
-      hideFromTabs: true,
-      children: [
-        {
-          id: 'global-users',
-          text: 'Users',
-          icon: 'user',
-          url: '/admin/users',
-        },
-        {
-          id: 'global-orgs',
-          text: 'Orgs',
-          icon: 'building',
-          url: '/admin/orgs',
         },
         {
           id: 'server-settings',
@@ -2039,7 +1980,7 @@ export const navIndex: NavIndex = {
     parentItem: {
       id: 'admin',
       text: 'Server Admin',
-      subTitle: 'Manage all users and orgs',
+      subTitle: 'Manage all users',
       icon: 'shield',
       url: '/admin/users',
       sortWeight: -1200,
@@ -2050,12 +1991,6 @@ export const navIndex: NavIndex = {
           text: 'Users',
           icon: 'user',
           url: '/admin/users',
-        },
-        {
-          id: 'global-orgs',
-          text: 'Orgs',
-          icon: 'building',
-          url: '/admin/orgs',
         },
         {
           id: 'server-settings',
@@ -2086,7 +2021,7 @@ export const navIndex: NavIndex = {
     parentItem: {
       id: 'admin',
       text: 'Server Admin',
-      subTitle: 'Manage all users and orgs',
+      subTitle: 'Manage all users',
       icon: 'shield',
       url: '/admin/users',
       sortWeight: -1200,
@@ -2097,12 +2032,6 @@ export const navIndex: NavIndex = {
           text: 'Users',
           icon: 'user',
           url: '/admin/users',
-        },
-        {
-          id: 'global-orgs',
-          text: 'Orgs',
-          icon: 'building',
-          url: '/admin/orgs',
         },
         {
           id: 'server-settings',
@@ -2133,7 +2062,7 @@ export const navIndex: NavIndex = {
     parentItem: {
       id: 'admin',
       text: 'Server Admin',
-      subTitle: 'Manage all users and orgs',
+      subTitle: 'Manage all users',
       icon: 'shield',
       url: '/admin/users',
       sortWeight: -1200,
@@ -2144,12 +2073,6 @@ export const navIndex: NavIndex = {
           text: 'Users',
           icon: 'user',
           url: '/admin/users',
-        },
-        {
-          id: 'global-orgs',
-          text: 'Orgs',
-          icon: 'building',
-          url: '/admin/orgs',
         },
         {
           id: 'server-settings',

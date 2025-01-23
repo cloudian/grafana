@@ -136,7 +136,7 @@ Basic roles are the standard roles that are available in Grafana OSS. If you hav
 
 Grafana includes the following basic roles:
 
-- Grafana administrator
+- HyperIQ administrator
 - Organization administrator
 - Editor
 - Viewer
@@ -166,7 +166,7 @@ For more information about the permissions associated with each basic role, refe
 To interact with the API and view or modify basic roles permissions, refer to [the table](ref:rbac-basic-role-uid-mapping) that maps basic role names to the associated UID.
 
 {{% admonition type="note" %}}
-You cannot use a service account to modify basic roles via the RBAC API. To update basic roles, you must be a Grafana administrator and use basic authentication with the request.
+You cannot use a service account to modify basic roles via the RBAC API. To update basic roles, you must be a HyperIQ administrator and use basic authentication with the request.
 {{% /admonition %}}
 
 ### Fixed roles
