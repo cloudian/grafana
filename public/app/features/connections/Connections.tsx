@@ -2,11 +2,9 @@ import { Route, Switch, useLocation } from 'react-router-dom';
 import { Navigate } from 'react-router-dom-v5-compat';
 
 import { DataSourcesRoutesContext } from 'app/features/datasources/state';
-import { StoreState, useSelector } from 'app/types';
 
 import { ROUTES } from './constants';
 import {
-  AddNewConnectionPage,
   DataSourceDashboardsPage,
   DataSourceDetailsPage,
   DataSourcesListPage,
@@ -28,8 +26,6 @@ function RedirectToAddNewConnection() {
 }
 
 export default function Connections() {
-  const navIndex = useSelector((state: StoreState) => state.navIndex);
-  const isAddNewConnectionPageOverridden = Boolean(navIndex['standalone-plugin-page-/connections/add-new-connection']);
 
   return (
     <DataSourcesRoutesContext.Provider
@@ -42,17 +38,12 @@ export default function Connections() {
     >
       <Switch>
         {/* Redirect to "Add new connection" by default */}
-        <Route exact sensitive path={ROUTES.Base} component={() => <Navigate replace to={ROUTES.AddNewConnection} />} />
+        <Route exact sensitive path={ROUTES.Base} component={() => <Navigate replace to={ROUTES.DataSources} />} />
         <Route exact sensitive path={ROUTES.DataSources} component={DataSourcesListPage} />
         <Route exact sensitive path={ROUTES.DataSourcesNew} component={NewDataSourcePage} />
         <Route exact sensitive path={ROUTES.DataSourcesDetails} component={DataSourceDetailsPage} />
         <Route exact sensitive path={ROUTES.DataSourcesEdit} component={EditDataSourcePage} />
         <Route exact sensitive path={ROUTES.DataSourcesDashboards} component={DataSourceDashboardsPage} />
-
-        {/* "Add new connection" page - we don't register a route in case a plugin already registers a standalone page for it */}
-        {!isAddNewConnectionPageOverridden && (
-          <Route exact sensitive path={ROUTES.AddNewConnection} component={AddNewConnectionPage} />
-        )}
 
         {/* Redirect from earlier routes to updated routes */}
         <Route exact path={ROUTES.ConnectDataOutdated} component={RedirectToAddNewConnection} />

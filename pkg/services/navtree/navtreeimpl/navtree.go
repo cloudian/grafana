@@ -21,7 +21,6 @@ import (
 	"github.com/grafana/grafana/pkg/services/pluginsintegration/pluginstore"
 	pref "github.com/grafana/grafana/pkg/services/preference"
 	"github.com/grafana/grafana/pkg/services/star"
-	"github.com/grafana/grafana/pkg/services/supportbundles/supportbundlesimpl"
 	"github.com/grafana/grafana/pkg/setting"
 )
 
@@ -111,7 +110,7 @@ func (s *ServiceImpl) GetNavTree(c *contextmodel.ReqContext, prefs *pref.Prefere
 			Id:         navtree.NavIDDashboards,
 			SubTitle:   "Create and manage dashboards to visualize your data",
 			Icon:       "apps",
-			Url:        s.cfg.AppSubURL + "/dashboards",
+			Url:        s.cfg.AppSubURL + "/dashboards?tag=HyperIQ",
 			SortWeight: navtree.WeightDashboard,
 			Children:   dashboardChildLinks,
 		}
@@ -238,24 +237,6 @@ func (s *ServiceImpl) addHelpLinks(treeRoot *navtree.NavTreeRoot, c *contextmode
 		}
 
 		treeRoot.AddSection(helpNode)
-
-		hasAccess := ac.HasAccess(s.accessControl, c)
-		supportBundleAccess := ac.EvalAny(
-			ac.EvalPermission(supportbundlesimpl.ActionRead),
-			ac.EvalPermission(supportbundlesimpl.ActionCreate),
-		)
-
-		if isSupportBundlesEnabled(s) && hasAccess(supportBundleAccess) {
-			supportBundleNode := &navtree.NavLink{
-				Text:       "Support bundles",
-				Id:         "support-bundles",
-				Url:        "/support-bundles",
-				Icon:       "wrench",
-				SortWeight: navtree.WeightHelp,
-			}
-
-			helpNode.Children = append(helpNode.Children, supportBundleNode)
-		}
 	}
 }
 
