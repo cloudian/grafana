@@ -1,5 +1,3 @@
-# syntax=docker/dockerfile:1
-
 ARG BASE_IMAGE=alpine:3.19.1
 ARG JS_IMAGE=node:20-alpine
 ARG JS_PLATFORM=linux/amd64
@@ -21,6 +19,7 @@ COPY plugins-bundled plugins-bundled
 COPY public public
 COPY LICENSE ./
 COPY conf/defaults.ini ./conf/defaults.ini
+COPY e2e e2e
 
 RUN apk add --no-cache make build-base python3
 
@@ -67,6 +66,7 @@ COPY pkg/storage/unified/apistore/go.* pkg/storage/unified/apistore/
 COPY pkg/semconv/go.* pkg/semconv/
 COPY pkg/aggregator/go.* pkg/aggregator/
 COPY apps/playlist/go.* apps/playlist/
+COPY apps apps
 
 RUN go mod download
 RUN if [[ "$BINGO" = "true" ]]; then \

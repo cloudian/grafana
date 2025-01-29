@@ -326,7 +326,21 @@ shellcheck: $(SH_FILES) ## Run checks for shell scripts.
 TAG_SUFFIX=$(if $(WIRE_TAGS)!=oss,-$(WIRE_TAGS))
 PLATFORM=linux/amd64
 
-.PHONY: build-docker-full
+.PHONY: build-docker-full-cloudian
+build-docker-full-cloudian: ## Build Cloudian Grafana image
+	@echo "building Cloudian Grafana container image"
+	tar -ch . | \
+	docker buildx build - \
+	--platform $(PLATFORM) \
+	--build-arg BINGO=true \
+	--build-arg GO_BUILD_TAGS=$(GO_BUILD_TAGS) \
+	--build-arg WIRE_TAGS=$(WIRE_TAGS) \
+	--build-arg COMMIT_SHA=$$(git rev-parse HEAD) \
+	--build-arg BUILD_BRANCH=$$(git rev-parse --abbrev-ref HEAD) \
+	--tag $(REPO):$(TAG) \
+	$(DOCKER_BUILD_ARGS)
+
+PHONY: build-docker-full
 build-docker-full: ## Build Docker image for development.
 	@echo "build docker container"
 	tar -ch . | \
