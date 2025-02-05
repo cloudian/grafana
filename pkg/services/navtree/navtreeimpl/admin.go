@@ -5,7 +5,6 @@ import (
 	ac "github.com/grafana/grafana/pkg/services/accesscontrol"
 	"github.com/grafana/grafana/pkg/services/accesscontrol/ssoutils"
 	contextmodel "github.com/grafana/grafana/pkg/services/contexthandler/model"
-	"github.com/grafana/grafana/pkg/services/correlations"
 	"github.com/grafana/grafana/pkg/services/featuremgmt"
 	"github.com/grafana/grafana/pkg/services/navtree"
 	"github.com/grafana/grafana/pkg/services/org"
@@ -71,30 +70,6 @@ func (s *ServiceImpl) getAdminNode(c *contextmodel.ReqContext) (*navtree.NavLink
 
 	if len(generalNode.Children) > 0 {
 		configNodes = append(configNodes, generalNode)
-	}
-
-	pluginsNodeLinks := []*navtree.NavLink{}
-	if s.features.IsEnabled(ctx, featuremgmt.FlagCorrelations) && hasAccess(correlations.ConfigurationPageAccess) {
-		pluginsNodeLinks = append(pluginsNodeLinks, &navtree.NavLink{
-			Text:     "Correlations",
-			Icon:     "gf-glue",
-			SubTitle: "Add and configure correlations",
-			Id:       "correlations",
-			Url:      s.cfg.AppSubURL + "/datasources/correlations",
-		})
-	}
-
-	pluginsNode := &navtree.NavLink{
-		Text:     "Plugins and data",
-		SubTitle: "Install plugins and define the relationships between data",
-		Id:       navtree.NavIDCfgPlugins,
-		Url:      "/admin/plugins",
-		Icon:     "shield",
-		Children: pluginsNodeLinks,
-	}
-
-	if len(pluginsNode.Children) > 0 {
-		configNodes = append(configNodes, pluginsNode)
 	}
 
 	accessNodeLinks := []*navtree.NavLink{}
