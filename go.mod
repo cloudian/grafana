@@ -170,32 +170,32 @@ require (
 	go.uber.org/atomic v1.11.0 // @grafana/alerting-backend
 	go.uber.org/goleak v1.3.0 // @grafana/grafana-search-and-storage
 	gocloud.dev v0.39.0 // @grafana/grafana-app-platform-squad
-	golang.org/x/crypto v0.27.0 // @grafana/grafana-backend-group
+	golang.org/x/crypto v0.28.0 // @grafana/grafana-backend-group
 	golang.org/x/exp v0.0.0-20240808152545-0cdaa3abc0fa // @grafana/alerting-backend
-	golang.org/x/mod v0.20.0 // indirect; @grafana/grafana-backend-group
-	golang.org/x/net v0.29.0 // @grafana/oss-big-tent @grafana/partner-datasources
+	golang.org/x/mod v0.21.0 // indirect; @grafana/grafana-backend-group
+	golang.org/x/net v0.30.0 // @grafana/oss-big-tent @grafana/partner-datasources
 	golang.org/x/oauth2 v0.23.0 // @grafana/identity-access-team
 	golang.org/x/sync v0.8.0 // @grafana/alerting-backend
-	golang.org/x/text v0.18.0 // @grafana/grafana-backend-group
-	golang.org/x/time v0.6.0 // @grafana/grafana-backend-group
-	golang.org/x/tools v0.24.0 // @grafana/grafana-as-code
+	golang.org/x/text v0.19.0 // @grafana/grafana-backend-group
+	golang.org/x/time v0.7.0 // @grafana/grafana-backend-group
+	golang.org/x/tools v0.26.0 // @grafana/grafana-as-code
 	gonum.org/v1/gonum v0.14.0 // @grafana/observability-metrics
 	google.golang.org/api v0.191.0 // @grafana/grafana-backend-group
 	google.golang.org/grpc v1.66.0 // @grafana/plugins-platform-backend
-	google.golang.org/protobuf v1.34.2 // @grafana/plugins-platform-backend
+	google.golang.org/protobuf v1.35.1 // @grafana/plugins-platform-backend
 	gopkg.in/ini.v1 v1.67.0 // @grafana/alerting-backend
 	gopkg.in/mail.v2 v2.3.1 // @grafana/grafana-backend-group
 	gopkg.in/yaml.v3 v3.0.1 // @grafana/alerting-backend
 	k8s.io/api v0.31.1 // @grafana/grafana-app-platform-squad
-	k8s.io/apimachinery v0.31.1 // @grafana/grafana-app-platform-squad
+	k8s.io/apimachinery v0.32.1 // @grafana/grafana-app-platform-squad
 	k8s.io/apiserver v0.31.1 // @grafana/grafana-app-platform-squad
 	k8s.io/client-go v0.31.1 // @grafana/grafana-app-platform-squad
 	k8s.io/component-base v0.31.1 // @grafana/grafana-app-platform-squad
 	k8s.io/klog/v2 v2.130.1 // @grafana/grafana-app-platform-squad
 	k8s.io/kube-aggregator v0.31.1 // @grafana/grafana-app-platform-squad
-	k8s.io/kube-openapi v0.0.0-20240228011516-70dd3763d340 // @grafana/grafana-app-platform-squad
-	k8s.io/utils v0.0.0-20240711033017-18e509b52bc8 // @grafana/partner-datasources
-	sigs.k8s.io/structured-merge-diff/v4 v4.4.1 // @grafana-app-platform-squad
+	k8s.io/kube-openapi v0.0.0-20241105132330-32ad38e42d3f // @grafana/grafana-app-platform-squad
+	k8s.io/utils v0.0.0-20241104100929-3ea5e8cea738 // @grafana/partner-datasources
+	sigs.k8s.io/structured-merge-diff/v4 v4.4.2 // @grafana-app-platform-squad
 	xorm.io/builder v0.3.6 // @grafana/grafana-backend-group
 	xorm.io/core v0.7.3 // @grafana/grafana-backend-group
 	xorm.io/xorm v0.8.2 // @grafana/alerting-backend
@@ -360,7 +360,7 @@ require (
 	github.com/mithrandie/go-file/v2 v2.1.0 // indirect
 	github.com/mithrandie/go-text v1.6.0 // indirect
 	github.com/mithrandie/ternary v1.1.1 // indirect
-	github.com/moby/spdystream v0.4.0 // indirect
+	github.com/moby/spdystream v0.5.0 // indirect
 	github.com/modern-go/concurrent v0.0.0-20180306012644-bacd9c7ef1dd // indirect
 	github.com/mpvl/unique v0.0.0-20150818121801-cbe035fff7de // indirect
 	github.com/mschoch/smat v0.2.0 // indirect
@@ -430,8 +430,8 @@ require (
 	go.uber.org/mock v0.4.0 // indirect
 	go.uber.org/multierr v1.11.0 // indirect
 	go.uber.org/zap v1.27.0 // @grafana/identity-access-team
-	golang.org/x/sys v0.25.0 // indirect
-	golang.org/x/term v0.24.0 // indirect
+	golang.org/x/sys v0.26.0 // indirect
+	golang.org/x/term v0.25.0 // indirect
 	golang.org/x/xerrors v0.0.0-20240716161551-93cc26a95ae9 // indirect
 	google.golang.org/genproto v0.0.0-20240812133136-8ffd90a71988 // indirect; @grafana/grafana-backend-group
 	google.golang.org/genproto/googleapis/api v0.0.0-20240822170219-fc7c04adadcd // indirect
@@ -450,7 +450,7 @@ require (
 	modernc.org/strutil v1.2.0 // indirect
 	modernc.org/token v1.1.0 // indirect
 	sigs.k8s.io/apiserver-network-proxy/konnectivity-client v0.30.3 // indirect
-	sigs.k8s.io/json v0.0.0-20221116044647-bc3834ca7abd // indirect
+	sigs.k8s.io/json v0.0.0-20241010143419-9aa6b5e7a4b3 // indirect
 	sigs.k8s.io/yaml v1.4.0 // indirect; @grafana-app-platform-squad
 )
 
