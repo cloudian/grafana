@@ -24,19 +24,21 @@ if [ "$1" = "release" ]; then
   TAG=$(echo $TAG | cut -d- -f1-2)
 fi
 
-# Call standard build script.  Use --fast so it builds only for x64
-packaging/docker/build.sh --fast $TAG $REPO
-
 # Don't include leading 'v' from the repository tag
 if echo "$TAG" | grep -q "^v"; then
-	TAG=$(echo "$TAG" | cut -b2-)
+  TAG=$(echo "$TAG" | cut -b2-)
 fi
 
-# Send to quay.io
-docker push $REPO:$TAG
+# Pulled from Makefile build-docker-full target
+export TAG REPO
+make build-docker-full-cloudian
 
-# If we're doing a release build, update the latest tag
+# Push to quay.io if we're doing a release build
 if [ "$1" = "release" ]; then
+  # Send to quay.io
+  docker push $REPO:$TAG
+
+  # Update the latest tag
   docker tag $REPO:$TAG $REPO:latest
   docker push $REPO:latest
 fi
