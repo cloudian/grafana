@@ -44,7 +44,7 @@ require (
 	github.com/bufbuild/connect-go v1.10.0 // @grafana/observability-traces-and-profiling
 	github.com/bwmarrin/snowflake v0.3.0 // @grafan/grafana-app-platform-squad
 	github.com/centrifugal/centrifuge v0.33.3 // @grafana/grafana-app-platform-squad
-	github.com/crewjam/saml v0.4.13 // @grafana/identity-access-team
+	github.com/crewjam/saml v0.4.14 // @grafana/identity-access-team
 	github.com/dave/dst v0.27.3 // @grafana/grafana-as-code
 	github.com/dlmiddlecote/sqlstats v1.0.2 // @grafana/grafana-backend-group
 	github.com/fatih/color v1.17.0 // @grafana/grafana-backend-group
@@ -62,7 +62,7 @@ require (
 	github.com/go-stack/stack v1.8.1 // @grafana/grafana-backend-group
 	github.com/gobwas/glob v0.2.3 // @grafana/grafana-backend-group
 	github.com/gogo/protobuf v1.3.2 // @grafana/alerting-backend
-	github.com/golang-jwt/jwt/v4 v4.5.0 // @grafana/grafana-backend-group
+	github.com/golang-jwt/jwt/v4 v4.5.2 // @grafana/grafana-backend-group
 	github.com/golang-migrate/migrate/v4 v4.7.0 // @grafana/grafana-backend-group
 	github.com/golang/mock v1.6.0 // @grafana/alerting-backend
 	github.com/golang/protobuf v1.5.4 // @grafana/grafana-backend-group
@@ -170,13 +170,13 @@ require (
 	go.uber.org/atomic v1.11.0 // @grafana/alerting-backend
 	go.uber.org/goleak v1.3.0 // @grafana/grafana-search-and-storage
 	gocloud.dev v0.39.0 // @grafana/grafana-app-platform-squad
-	golang.org/x/crypto v0.27.0 // @grafana/grafana-backend-group
+	golang.org/x/crypto v0.35.0
 	golang.org/x/exp v0.0.0-20240808152545-0cdaa3abc0fa // @grafana/alerting-backend
 	golang.org/x/mod v0.20.0 // indirect; @grafana/grafana-backend-group
 	golang.org/x/net v0.29.0 // @grafana/oss-big-tent @grafana/partner-datasources
 	golang.org/x/oauth2 v0.23.0 // @grafana/identity-access-team
-	golang.org/x/sync v0.8.0 // @grafana/alerting-backend
-	golang.org/x/text v0.18.0 // @grafana/grafana-backend-group
+	golang.org/x/sync v0.11.0 // @grafana/alerting-backend
+	golang.org/x/text v0.22.0 // @grafana/grafana-backend-group
 	golang.org/x/time v0.6.0 // @grafana/grafana-backend-group
 	golang.org/x/tools v0.24.0 // @grafana/grafana-as-code
 	gonum.org/v1/gonum v0.14.0 // @grafana/observability-metrics
@@ -285,7 +285,7 @@ require (
 	github.com/gofrs/uuid v4.4.0+incompatible // indirect
 	github.com/gogo/googleapis v1.4.1 // indirect
 	github.com/gogo/status v1.1.1 // indirect
-	github.com/golang-jwt/jwt/v5 v5.2.1 // indirect
+	github.com/golang-jwt/jwt/v5 v5.2.2 // indirect
 	github.com/golang-sql/civil v0.0.0-20220223132316-b832511892a9 // indirect
 	github.com/golang-sql/sqlexp v0.1.0 // indirect
 	github.com/golang/groupcache v0.0.0-20210331224755-41bb18bfe9da // indirect
@@ -430,8 +430,8 @@ require (
 	go.uber.org/mock v0.4.0 // indirect
 	go.uber.org/multierr v1.11.0 // indirect
 	go.uber.org/zap v1.27.0 // @grafana/identity-access-team
-	golang.org/x/sys v0.25.0 // indirect
-	golang.org/x/term v0.24.0 // indirect
+	golang.org/x/sys v0.30.0 // indirect
+	golang.org/x/term v0.29.0 // indirect
 	golang.org/x/xerrors v0.0.0-20240716161551-93cc26a95ae9 // indirect
 	google.golang.org/genproto v0.0.0-20240812133136-8ffd90a71988 // indirect; @grafana/grafana-backend-group
 	google.golang.org/genproto/googleapis/api v0.0.0-20240822170219-fc7c04adadcd // indirect
