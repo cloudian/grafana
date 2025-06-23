@@ -106,7 +106,7 @@ curl --location --request GET '<grafana_url>/api/access-control/roles/qQui_LCMk'
     "uid": "qQui_LCMk",
     "name": "fixed:users:writer",
     "displayName": "User writer",
-    "description": "Read and update all attributes and settings for all users in Grafana: update user information, read user information, create or enable or disable a user, make a user a HyperIQ administrator, sign out a user, update a user’s authentication token, or update quotas for all users.",
+    "description": "Read and update all attributes and settings for all users in Grafana: update user information, read user information, create or enable or disable a user, make a user a LogInsight administrator, sign out a user, update a user’s authentication token, or update quotas for all users.",
     "global": true,
     "permissions": [
         {

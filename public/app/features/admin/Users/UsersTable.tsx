@@ -83,7 +83,7 @@ export const UsersTable = ({
                   <Stack alignItems={'center'}>
                     <OrgUnits units={value} icon={'building'} />
                     {row.original.isAdmin && (
-                      <Tooltip placement="top" content="HyperIQ Admin">
+                      <Tooltip placement="top" content="LogInsight Admin">
                         <Icon name="shield" />
                       </Tooltip>
                     )}

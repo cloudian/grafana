@@ -43,7 +43,7 @@ export function UserPermissions({ isGrafanaAdmin, isExternalUser, lockMessage, o
       <table className="filter-table form-inline">
         <tbody>
           <tr>
-            <td className="width-16">HyperIQ Admin</td>
+            <td className="width-16">LogInsight Admin</td>
             {isEditing ? (
               <td colSpan={2}>
                 <RadioButtonGroup

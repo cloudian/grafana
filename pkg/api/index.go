@@ -133,7 +133,7 @@ func (hs *HTTPServer) setIndexViewData(c *contextmodel.ReqContext) (*dtos.IndexV
 		AppNameBodyClass:                    "app-grafana",
 		FavIcon:                             "public/img/cloudian_logo_alt.png",
 		AppleTouchIcon:                      "public/img/cloudian_logo_alt.png",
-		AppTitle:                            "Cloudian® HyperIQ",
+		AppTitle:                            "Cloudian® LogInsight",
 		NavTree:                             navTree,
 		Nonce:                               c.RequestNonce,
 		LoadingLogo:                         "public/img/cloudian_logo.png",

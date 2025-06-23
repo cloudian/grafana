@@ -70,7 +70,7 @@ export const ForgottenPassword = () => {
         </LinkButton>
       </Stack>
 
-      <p className={styles}>Did you forget your username or email? Contact your HyperIQ administrator.</p>
+      <p className={styles}>Did you forget your username or email? Contact your LogInsight administrator.</p>
     </form>
   );
 };
