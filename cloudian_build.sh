@@ -16,9 +16,8 @@ echo $PASSWORD | docker login quay.io -u $USERNAME --password-stdin
 cd $(dirname $0)
 
 # Determine TAG for this build
-LOGINSIGHT_SUFFIX='-loginsight'
 REPO=quay.io/cloudian/grafana
-TAG="$(git describe)${LOGINSIGHT_SUFFIX}"
+TAG="$(git describe)"
 
 # Strip off Git commit for release build
 if [ "$1" = "release" ]; then
