@@ -10,7 +10,6 @@ import (
 	"github.com/grafana/grafana/pkg/services/correlations"
 	"github.com/grafana/grafana/pkg/services/featuremgmt"
 	"github.com/grafana/grafana/pkg/services/navtree"
-	"github.com/grafana/grafana/pkg/services/pluginsintegration/pluginaccesscontrol"
 	"github.com/grafana/grafana/pkg/services/serviceaccounts"
 	"github.com/grafana/grafana/pkg/setting"
 )
@@ -20,8 +19,6 @@ func (s *ServiceImpl) getAdminNode(c *contextmodel.ReqContext) (*navtree.NavLink
 	var configNodes []*navtree.NavLink
 	ctx := c.Req.Context()
 	hasAccess := ac.HasAccess(s.accessControl, c)
-	hasGlobalAccess := ac.HasGlobalAccess(s.accessControl, s.authnService, c)
-	orgsAccessEvaluator := ac.EvalPermission(ac.ActionOrgsRead)
 	authConfigUIAvailable := s.license.FeatureEnabled(social.SAMLProviderName) || s.cfg.LDAPAuthEnabled
 
 	generalNodeLinks := []*navtree.NavLink{}
@@ -37,11 +34,6 @@ func (s *ServiceImpl) getAdminNode(c *contextmodel.ReqContext) (*navtree.NavLink
 	if hasAccess(ac.EvalPermission(ac.ActionSettingsRead, ac.ScopeSettingsAll)) {
 		generalNodeLinks = append(generalNodeLinks, &navtree.NavLink{
 			Text: "Settings", SubTitle: "View the settings defined in your Grafana config", Id: "server-settings", Url: s.cfg.AppSubURL + "/admin/settings", Icon: "sliders-v-alt",
-		})
-	}
-	if hasGlobalAccess(orgsAccessEvaluator) {
-		generalNodeLinks = append(generalNodeLinks, &navtree.NavLink{
-			Text: "Organizations", SubTitle: "Isolated instances of Grafana running on the same server", Id: "global-orgs", Url: s.cfg.AppSubURL + "/admin/orgs", Icon: "building",
 		})
 	}
 	if hasAccess(cloudmigration.MigrationAssistantAccess) && s.features.IsEnabled(ctx, featuremgmt.FlagOnPremToCloudMigrations) {
@@ -78,17 +70,6 @@ func (s *ServiceImpl) getAdminNode(c *contextmodel.ReqContext) (*navtree.NavLink
 	}
 
 	pluginsNodeLinks := []*navtree.NavLink{}
-	// FIXME: If plugin admin is disabled or externally managed, server admins still need to access the page, this is why
-	// while we don't have a permissions for listing plugins the legacy check has to stay as a default
-	if pluginaccesscontrol.ReqCanAdminPlugins(s.cfg)(c) || hasAccess(pluginaccesscontrol.AdminAccessEvaluator) {
-		pluginsNodeLinks = append(pluginsNodeLinks, &navtree.NavLink{
-			Text:     "Plugins",
-			Id:       "plugins",
-			SubTitle: "Extend the Grafana experience with plugins",
-			Icon:     "plug",
-			Url:      s.cfg.AppSubURL + "/plugins",
-		})
-	}
 	if s.features.IsEnabled(ctx, featuremgmt.FlagCorrelations) && hasAccess(correlations.ConfigurationPageAccess) {
 		pluginsNodeLinks = append(pluginsNodeLinks, &navtree.NavLink{
 			Text:     "Correlations",

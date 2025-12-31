@@ -1899,7 +1899,7 @@ export const navIndex: NavIndex = {
   admin: {
     id: 'admin',
     text: 'Server Admin',
-    subTitle: 'Manage all users and orgs',
+    subTitle: 'Manage all users',
     icon: 'shield',
     url: '/admin/users',
     sortWeight: -1200,
@@ -1945,7 +1945,7 @@ export const navIndex: NavIndex = {
     parentItem: {
       id: 'admin',
       text: 'Server Admin',
-      subTitle: 'Manage all users and orgs',
+      subTitle: 'Manage all users',
       icon: 'shield',
       url: '/admin/users',
       sortWeight: -1200,
@@ -1992,7 +1992,7 @@ export const navIndex: NavIndex = {
     parentItem: {
       id: 'admin',
       text: 'Server Admin',
-      subTitle: 'Manage all users and orgs',
+      subTitle: 'Manage all users',
       icon: 'shield',
       url: '/admin/users',
       sortWeight: -1200,
@@ -2039,7 +2039,7 @@ export const navIndex: NavIndex = {
     parentItem: {
       id: 'admin',
       text: 'Server Admin',
-      subTitle: 'Manage all users and orgs',
+      subTitle: 'Manage all users',
       icon: 'shield',
       url: '/admin/users',
       sortWeight: -1200,
@@ -2086,7 +2086,7 @@ export const navIndex: NavIndex = {
     parentItem: {
       id: 'admin',
       text: 'Server Admin',
-      subTitle: 'Manage all users and orgs',
+      subTitle: 'Manage all users',
       icon: 'shield',
       url: '/admin/users',
       sortWeight: -1200,
@@ -2133,7 +2133,7 @@ export const navIndex: NavIndex = {
     parentItem: {
       id: 'admin',
       text: 'Server Admin',
-      subTitle: 'Manage all users and orgs',
+      subTitle: 'Manage all users',
       icon: 'shield',
       url: '/admin/users',
       sortWeight: -1200,

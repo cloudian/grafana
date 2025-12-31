@@ -3,7 +3,7 @@ import * as React from 'react';
 import { config, locationService } from '@grafana/runtime';
 import store from 'app/core/store';
 import { AlertManagerDataSourceJsonData, AlertManagerImplementation } from 'app/plugins/datasource/alertmanager/types';
-import grafanaIconSvg from 'img/grafana_icon.svg';
+import grafanaIconSvg from 'img/cloudian_logo.png';
 
 import { useAlertManagersByPermission } from '../hooks/useAlertManagerSources';
 import { useAlertmanagerConfig } from '../hooks/useAlertmanagerConfig';

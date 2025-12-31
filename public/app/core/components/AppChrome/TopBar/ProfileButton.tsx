@@ -40,13 +40,6 @@ export function ProfileButton({ profileNode, onToggleKioskMode }: Props) {
           onClick={onToggleKioskMode}
           label={t('profile.enable-kiosk-mode', 'Enable kiosk mode')}
         />
-        {config.newsFeedEnabled && (
-          <MenuItem
-            icon="rss"
-            onClick={onToggleShowNewsDrawer}
-            label={t('navigation.rss-button', 'Latest from the blog')}
-          />
-        )}
         <Menu.Divider />
         {!config.auth.disableSignoutMenu && (
           <MenuItem

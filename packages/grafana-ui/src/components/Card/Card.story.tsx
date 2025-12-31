@@ -7,7 +7,7 @@ import { TagList } from '../Tags/TagList';
 
 import { Card } from './Card';
 
-const logo = 'https://grafana.com/static/assets/img/apple-touch-icon.png';
+const logo = 'https://grafana.com/static/assets/img/cloudian_logo_alt.png';
 
 const meta: Meta<typeof Card> = {
   title: 'Layout/Card',
