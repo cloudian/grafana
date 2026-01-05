@@ -7,7 +7,6 @@ import (
 	"github.com/grafana/grafana/pkg/services/accesscontrol/ssoutils"
 	"github.com/grafana/grafana/pkg/services/cloudmigration"
 	contextmodel "github.com/grafana/grafana/pkg/services/contexthandler/model"
-	"github.com/grafana/grafana/pkg/services/correlations"
 	"github.com/grafana/grafana/pkg/services/featuremgmt"
 	"github.com/grafana/grafana/pkg/services/navtree"
 	"github.com/grafana/grafana/pkg/services/serviceaccounts"
@@ -67,40 +66,6 @@ func (s *ServiceImpl) getAdminNode(c *contextmodel.ReqContext) (*navtree.NavLink
 
 	if len(generalNode.Children) > 0 {
 		configNodes = append(configNodes, generalNode)
-	}
-
-	pluginsNodeLinks := []*navtree.NavLink{}
-	if s.features.IsEnabled(ctx, featuremgmt.FlagCorrelations) && hasAccess(correlations.ConfigurationPageAccess) {
-		pluginsNodeLinks = append(pluginsNodeLinks, &navtree.NavLink{
-			Text:     "Correlations",
-			Icon:     "gf-glue",
-			SubTitle: "Add and configure correlations",
-			Id:       "correlations",
-			Url:      s.cfg.AppSubURL + "/datasources/correlations",
-		})
-	}
-
-	if (s.cfg.Env == setting.Dev) || s.features.IsEnabled(ctx, featuremgmt.FlagEnableExtensionsAdminPage) && hasAccess(pluginaccesscontrol.AdminAccessEvaluator) {
-		pluginsNodeLinks = append(pluginsNodeLinks, &navtree.NavLink{
-			Text:     "Extensions",
-			Icon:     "plug",
-			SubTitle: "Extend the UI of plugins and Grafana",
-			Id:       "extensions",
-			Url:      s.cfg.AppSubURL + "/admin/extensions",
-		})
-	}
-
-	pluginsNode := &navtree.NavLink{
-		Text:     "Plugins and data",
-		SubTitle: "Install plugins and define the relationships between data",
-		Id:       navtree.NavIDCfgPlugins,
-		Url:      s.cfg.AppSubURL + "/admin/plugins",
-		Icon:     "shield",
-		Children: pluginsNodeLinks,
-	}
-
-	if len(pluginsNode.Children) > 0 {
-		configNodes = append(configNodes, pluginsNode)
 	}
 
 	accessNodeLinks := []*navtree.NavLink{}
