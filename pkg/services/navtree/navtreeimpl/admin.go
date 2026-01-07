@@ -34,25 +34,6 @@ func (s *ServiceImpl) getAdminNode(c *contextmodel.ReqContext) (*navtree.NavLink
 			Text: "Settings", SubTitle: "View the settings defined in your Grafana config", Id: "server-settings", Url: s.cfg.AppSubURL + "/admin/settings", Icon: "sliders-v-alt",
 		})
 	}
-	if hasAccess(cloudmigration.MigrationAssistantAccess) && s.features.IsEnabled(ctx, featuremgmt.FlagOnPremToCloudMigrations) {
-		generalNodeLinks = append(generalNodeLinks, &navtree.NavLink{
-			Text:     "Migrate to Grafana Cloud",
-			Id:       "migrate-to-cloud",
-			SubTitle: "Copy resources from your self-managed installation to a cloud stack",
-			Url:      s.cfg.AppSubURL + "/admin/migrate-to-cloud",
-		})
-	}
-	//nolint:staticcheck // not yet migrated to OpenFeature
-	if c.HasRole(identity.RoleAdmin) &&
-		(s.cfg.StackID == "" || // show OnPrem even when provisioning is disabled
-			s.features.IsEnabledGlobally(featuremgmt.FlagProvisioning)) {
-		generalNodeLinks = append(generalNodeLinks, &navtree.NavLink{
-			Text:     "Provisioning",
-			Id:       "provisioning",
-			SubTitle: "View and manage your provisioning connections",
-			Url:      s.cfg.AppSubURL + "/admin/provisioning",
-		})
-	}
 
 	generalNode := &navtree.NavLink{
 		Text:     "General",

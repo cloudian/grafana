@@ -68,7 +68,4 @@ export class Branding {
   static AppTitle = 'Cloudian® HyperIQ';
   static LoginTitle = 'Welcome to Cloudian® HyperIQ';
   static HideEdition = false;
-  static GetLoginSubTitle = (): null | string => {
-    return null;
-  };
 }
