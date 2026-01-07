@@ -21,7 +21,7 @@ export let getFooterLinks = (): FooterLink[] => {
       id: 'documentation',
       text: t('nav.help/documentation', 'Documentation'),
       icon: 'document-info',
-      url: 'public/docs/hyperiq_guide.pdf',
+      url: 'public/docs/hyperiq_guide_2_3.pdf',
     },
   ];
 };
