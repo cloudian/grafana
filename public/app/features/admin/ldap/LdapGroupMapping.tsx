@@ -55,10 +55,10 @@ export const GroupMappingComponent = ({ groupMappingIndex, onRemove }: GroupMapp
       {contextSrv.isGrafanaAdmin && (
         <Field
           htmlFor="grafana-admin"
-          label={t('ldap-drawer.group-mapping.grafana-admin.label', 'Grafana Admin')}
+          label={t('ldap-drawer.group-mapping.grafana-admin.label', 'HyperIQ Admin')}
           description={t(
             'ldap-drawer.group-mapping.grafana-admin.description',
-            'If enabled, all users from this group will be Grafana Admins'
+            'If enabled, all users from this group will be HyperIQ Admins'
           )}
         >
           <Switch

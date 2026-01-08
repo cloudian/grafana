@@ -142,7 +142,7 @@ export function AppRootPage({ pluginId, pluginNavSection }: Props) {
   // Because of the fallback at plugin routes, we need to check
   // if the user has permissions to see the plugin page.
   const userHasPermissionsToPluginPage = () => {
-    // Check if plugin does not have any configurations or the user is Grafana Admin
+    // Check if plugin does not have any configurations or the user is HyperIQ Admin
     if (!plugin.meta?.includes) {
       return true;
     }

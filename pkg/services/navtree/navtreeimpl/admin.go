@@ -1,18 +1,13 @@
 package navtreeimpl
 
 import (
-	"github.com/grafana/grafana/pkg/apimachinery/identity"
 	"github.com/grafana/grafana/pkg/login/social"
 	ac "github.com/grafana/grafana/pkg/services/accesscontrol"
 	"github.com/grafana/grafana/pkg/services/accesscontrol/ssoutils"
-	"github.com/grafana/grafana/pkg/services/cloudmigration"
 	contextmodel "github.com/grafana/grafana/pkg/services/contexthandler/model"
-	"github.com/grafana/grafana/pkg/services/correlations"
 	"github.com/grafana/grafana/pkg/services/featuremgmt"
 	"github.com/grafana/grafana/pkg/services/navtree"
-	"github.com/grafana/grafana/pkg/services/pluginsintegration/pluginaccesscontrol"
 	"github.com/grafana/grafana/pkg/services/serviceaccounts"
-	"github.com/grafana/grafana/pkg/setting"
 )
 
 // nolint: gocyclo
@@ -20,8 +15,6 @@ func (s *ServiceImpl) getAdminNode(c *contextmodel.ReqContext) (*navtree.NavLink
 	var configNodes []*navtree.NavLink
 	ctx := c.Req.Context()
 	hasAccess := ac.HasAccess(s.accessControl, c)
-	hasGlobalAccess := ac.HasGlobalAccess(s.accessControl, s.authnService, c)
-	orgsAccessEvaluator := ac.EvalPermission(ac.ActionOrgsRead)
 	authConfigUIAvailable := s.license.FeatureEnabled(social.SAMLProviderName) || s.cfg.LDAPAuthEnabled
 
 	generalNodeLinks := []*navtree.NavLink{}
@@ -39,30 +32,6 @@ func (s *ServiceImpl) getAdminNode(c *contextmodel.ReqContext) (*navtree.NavLink
 			Text: "Settings", SubTitle: "View the settings defined in your Grafana config", Id: "server-settings", Url: s.cfg.AppSubURL + "/admin/settings", Icon: "sliders-v-alt",
 		})
 	}
-	if hasGlobalAccess(orgsAccessEvaluator) {
-		generalNodeLinks = append(generalNodeLinks, &navtree.NavLink{
-			Text: "Organizations", SubTitle: "Isolated instances of Grafana running on the same server", Id: "global-orgs", Url: s.cfg.AppSubURL + "/admin/orgs", Icon: "building",
-		})
-	}
-	if hasAccess(cloudmigration.MigrationAssistantAccess) && s.features.IsEnabled(ctx, featuremgmt.FlagOnPremToCloudMigrations) {
-		generalNodeLinks = append(generalNodeLinks, &navtree.NavLink{
-			Text:     "Migrate to Grafana Cloud",
-			Id:       "migrate-to-cloud",
-			SubTitle: "Copy resources from your self-managed installation to a cloud stack",
-			Url:      s.cfg.AppSubURL + "/admin/migrate-to-cloud",
-		})
-	}
-	//nolint:staticcheck // not yet migrated to OpenFeature
-	if c.HasRole(identity.RoleAdmin) &&
-		(s.cfg.StackID == "" || // show OnPrem even when provisioning is disabled
-			s.features.IsEnabledGlobally(featuremgmt.FlagProvisioning)) {
-		generalNodeLinks = append(generalNodeLinks, &navtree.NavLink{
-			Text:     "Provisioning",
-			Id:       "provisioning",
-			SubTitle: "View and manage your provisioning connections",
-			Url:      s.cfg.AppSubURL + "/admin/provisioning",
-		})
-	}
 
 	generalNode := &navtree.NavLink{
 		Text:     "General",
@@ -75,51 +44,6 @@ func (s *ServiceImpl) getAdminNode(c *contextmodel.ReqContext) (*navtree.NavLink
 
 	if len(generalNode.Children) > 0 {
 		configNodes = append(configNodes, generalNode)
-	}
-
-	pluginsNodeLinks := []*navtree.NavLink{}
-	// FIXME: If plugin admin is disabled or externally managed, server admins still need to access the page, this is why
-	// while we don't have a permissions for listing plugins the legacy check has to stay as a default
-	if pluginaccesscontrol.ReqCanAdminPlugins(s.cfg)(c) || hasAccess(pluginaccesscontrol.AdminAccessEvaluator) {
-		pluginsNodeLinks = append(pluginsNodeLinks, &navtree.NavLink{
-			Text:     "Plugins",
-			Id:       "plugins",
-			SubTitle: "Extend the Grafana experience with plugins",
-			Icon:     "plug",
-			Url:      s.cfg.AppSubURL + "/plugins",
-		})
-	}
-	if s.features.IsEnabled(ctx, featuremgmt.FlagCorrelations) && hasAccess(correlations.ConfigurationPageAccess) {
-		pluginsNodeLinks = append(pluginsNodeLinks, &navtree.NavLink{
-			Text:     "Correlations",
-			Icon:     "gf-glue",
-			SubTitle: "Add and configure correlations",
-			Id:       "correlations",
-			Url:      s.cfg.AppSubURL + "/datasources/correlations",
-		})
-	}
-
-	if (s.cfg.Env == setting.Dev) || s.features.IsEnabled(ctx, featuremgmt.FlagEnableExtensionsAdminPage) && hasAccess(pluginaccesscontrol.AdminAccessEvaluator) {
-		pluginsNodeLinks = append(pluginsNodeLinks, &navtree.NavLink{
-			Text:     "Extensions",
-			Icon:     "plug",
-			SubTitle: "Extend the UI of plugins and Grafana",
-			Id:       "extensions",
-			Url:      s.cfg.AppSubURL + "/admin/extensions",
-		})
-	}
-
-	pluginsNode := &navtree.NavLink{
-		Text:     "Plugins and data",
-		SubTitle: "Install plugins and define the relationships between data",
-		Id:       navtree.NavIDCfgPlugins,
-		Url:      s.cfg.AppSubURL + "/admin/plugins",
-		Icon:     "shield",
-		Children: pluginsNodeLinks,
-	}
-
-	if len(pluginsNode.Children) > 0 {
-		configNodes = append(configNodes, pluginsNode)
 	}
 
 	accessNodeLinks := []*navtree.NavLink{}
