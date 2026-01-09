@@ -18,7 +18,7 @@ The as-code tools and tutorials that follow show you what do to, to declarativel
 
 ## Grafana Terraform provider
 
-HyperIQ administrators can manage dashboards, alerts and collectors, add synthetic monitoring probes and checks, manage identity and access, and more using the [Terraform provider for Grafana](https://registry.terraform.io/providers/grafana/grafana/latest).
+LogInsight administrators can manage dashboards, alerts and collectors, add synthetic monitoring probes and checks, manage identity and access, and more using the [Terraform provider for Grafana](https://registry.terraform.io/providers/grafana/grafana/latest).
 
 The following example shows a Terraform configuration for creating a dashboard:
 

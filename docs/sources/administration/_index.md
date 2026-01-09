@@ -10,7 +10,7 @@ weight: 40
 
 # Administration
 
-This section includes information for HyperIQ administrators, team administrators, and users performing administrative tasks:
+This section includes information for LogInsight administrators, team administrators, and users performing administrative tasks:
 
 {{< section >}}
 

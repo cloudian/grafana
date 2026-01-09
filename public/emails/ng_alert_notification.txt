@@ -63,4 +63,4 @@ Annotations: {{ template "__default_sorted_pairs" $annotations }}
 {{- end }}
 
 
-Sent by HyperIQ (c) {{now | date "2006"}} Grafana Labs and Cloudian, Inc.
+Sent by LogInsight (c) {{now | date "2006"}} Grafana Labs and Cloudian, Inc.

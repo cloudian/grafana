@@ -22,9 +22,9 @@ Grafana allows you to manage certain aspects of your user account, including you
 
 You can also view important information about your account, such as the organizations and roles to which you are assigned and the Grafana sessions associated with your account.
 
-## Change your HyperIQ password
+## Change your LogInsight password
 
-You can change your HyperIQ password at any time.
+You can change your LogInsight password at any time.
 
 {{< admonition type="note" >}}
 If your Grafana instance uses an external authentication provider, then you might not be able to change your password in Grafana. Contact your Grafana administrator for more information.

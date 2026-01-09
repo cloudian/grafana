@@ -429,7 +429,7 @@ describe('AppRootPage', () => {
         });
       });
 
-      describe('HyperIQ Admin access', () => {
+      describe('LogInsight Admin access', () => {
         beforeEach(() => {
           contextSrv.isGrafanaAdmin = true;
         });

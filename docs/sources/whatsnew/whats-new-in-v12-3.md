@@ -46,7 +46,7 @@ weight: -52
 
 # What’s new in Grafana v12.3
 
-Welcome to Cloudian® HyperIQ 12.3!
+Welcome to Cloudian® LogInsight 12.3!
 
 This release reimagines how you explore logs, delivers more ways to connect your data, and enables more intuitive sharing, so you can spend less time navigating tools and more time turning signals into action. It starts with a completely redesigned logs panel that brings faster pattern recognition, clearer context, and a smoother exploration experience. We’ve also expanded what you can do with new data sources and query improvements, from SolarWinds Enterprise to advanced Honeycomb and OpenSearch capabilities.
 

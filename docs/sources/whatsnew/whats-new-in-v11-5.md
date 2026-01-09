@@ -50,7 +50,7 @@ weight: -47
 
 # What’s new in Grafana v11.5
 
-Welcome to Cloudian® HyperIQ 11.5!
+Welcome to Cloudian® LogInsight 11.5!
 Read on to learn about new sharing, reporting, and export options, cross-cluster search for Elasticsearch, PDC support for several new data sources, and more.
 The Grafana Cloud Migration Assistant is in public preview and now supports all plugins and Grafana Alerts, in addition to dashboards, folders, and data sources.
 We've also made it more secure to run third-party apps and data sources, and improved user session handling for OAuth 2.0 and SAML.

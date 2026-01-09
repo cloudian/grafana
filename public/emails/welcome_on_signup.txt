@@ -1,4 +1,4 @@
-{{HiddenSubject .Subject "Welcome to Cloudian® HyperIQ"}}
+{{HiddenSubject .Subject "Welcome to Cloudian® LogInsight"}}
 
 Hi {{.Name}},
 
@@ -11,4 +11,4 @@ Thank you for joining our community.
 The Grafana team
 
 
-Sent by HyperIQ (c) {{now | date "2006"}} Grafana Labs and Cloudian, Inc.
+Sent by LogInsight (c) {{now | date "2006"}} Grafana Labs and Cloudian, Inc.
