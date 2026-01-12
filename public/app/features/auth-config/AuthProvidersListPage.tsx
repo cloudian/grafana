@@ -8,8 +8,6 @@ import { Grid, TextLink, ToolbarButton } from '@grafana/ui';
 import { Page } from 'app/core/components/Page/Page';
 import { StoreState } from 'app/types/store';
 
-import { isOpenSourceBuildOrUnlicenced } from '../admin/EnterpriseAuthFeaturesCard';
-
 import AuthDrawer from './AuthDrawer';
 import ConfigureAuthCTA from './components/ConfigureAuthCTA';
 import { ProviderCard, ProviderSAMLCard, ProviderSCIMCard } from './components/ProviderCard';
@@ -120,12 +118,6 @@ export const AuthConfigPageUnconnected = ({
                   configPath={settings.configPath}
                 />
               ))}
-            {isOpenSourceBuildOrUnlicenced() && (
-              <>
-                <ProviderSAMLCard />
-                <ProviderSCIMCard />
-              </>
-            )}
             {showDrawer && <AuthDrawer onClose={() => setShowDrawer(false)}></AuthDrawer>}
           </Grid>
         )}
