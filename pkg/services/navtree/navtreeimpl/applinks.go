@@ -280,15 +280,6 @@ func (s *ServiceImpl) addPluginToSection(c *contextmodel.ReqContext, treeRoot *n
 	} else {
 		switch sectionID {
 		case navtree.NavIDApps:
-			treeRoot.AddSection(&navtree.NavLink{
-				Text:       "More apps",
-				Icon:       "layer-group",
-				SubTitle:   "App plugins that extend the Grafana experience",
-				Id:         navtree.NavIDApps,
-				Children:   sectionChildren,
-				SortWeight: navtree.WeightApps,
-				Url:        s.cfg.AppSubURL + "/apps",
-			})
 		case navtree.NavIDObservability:
 			treeRoot.AddSection(&navtree.NavLink{
 				Text:       "Observability",
@@ -381,9 +372,6 @@ func (s *ServiceImpl) readNavigationSettings() {
 		"grafana-k8s-app":                  {SectionID: navtree.NavIDObservability, SortWeight: 5, Text: "Kubernetes"},
 		"grafana-csp-app":                  {SectionID: navtree.NavIDObservability, SortWeight: 6, Icon: "cloud-provider"},
 		"grafana-metricsdrilldown-app":     {SectionID: navtree.NavIDDrilldown, SortWeight: 1, Text: "Metrics"},
-		"grafana-lokiexplore-app":          {SectionID: navtree.NavIDDrilldown, SortWeight: 2, Text: "Logs"},
-		"grafana-exploretraces-app":        {SectionID: navtree.NavIDDrilldown, SortWeight: 3, Text: "Traces"},
-		"grafana-pyroscope-app":            {SectionID: navtree.NavIDDrilldown, SortWeight: 4, Text: "Profiles"},
 		"grafana-synthetic-monitoring-app": {SectionID: navtree.NavIDTestingAndSynthetics, SortWeight: 2, Text: "Synthetics"},
 		"grafana-irm-app":                  {SectionID: navtree.NavIDAlertsAndIncidents, SortWeight: 3, Text: "IRM"},
 		"grafana-oncall-app":               {SectionID: navtree.NavIDAlertsAndIncidents, SortWeight: 4, Text: "OnCall"},

@@ -47,7 +47,7 @@ export function UserPermissions({ isGrafanaAdmin, isExternalUser, lockMessage, o
         <tbody>
           <tr>
             <td className="width-16">
-              <Trans i18nKey="admin.user-permissions.grafana-admin-key">Grafana Admin</Trans>
+              <Trans i18nKey="admin.user-permissions.grafana-admin-key">HyperIQ Admin</Trans>
             </td>
             {isEditing ? (
               <td colSpan={2}>

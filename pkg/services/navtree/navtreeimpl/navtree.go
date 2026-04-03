@@ -22,7 +22,6 @@ import (
 	pref "github.com/grafana/grafana/pkg/services/preference"
 	"github.com/grafana/grafana/pkg/services/sqlstore/searchstore"
 	"github.com/grafana/grafana/pkg/services/star"
-	"github.com/grafana/grafana/pkg/services/supportbundles/supportbundlesimpl"
 	"github.com/grafana/grafana/pkg/setting"
 
 	"github.com/open-feature/go-sdk/openfeature"
@@ -118,7 +117,7 @@ func (s *ServiceImpl) GetNavTree(c *contextmodel.ReqContext, prefs *pref.Prefere
 			Id:         navtree.NavIDDashboards,
 			SubTitle:   "Create and manage dashboards to visualize your data",
 			Icon:       "apps",
-			Url:        s.cfg.AppSubURL + "/dashboards",
+			Url:        s.cfg.AppSubURL + "/dashboards?tag=HyperIQ",
 			SortWeight: navtree.WeightDashboard,
 			Children:   dashboardChildLinks,
 		}
@@ -241,10 +240,6 @@ func (s *ServiceImpl) getHomeNode(c *contextmodel.ReqContext, prefs *pref.Prefer
 	return homeNode
 }
 
-func isSupportBundlesEnabled(s *ServiceImpl) bool {
-	return s.cfg.SectionWithEnvOverrides("support_bundles").Key("enabled").MustBool(true)
-}
-
 // addHelpLinks adds a help menu item to the navigation bar.
 func (s *ServiceImpl) addHelpLinks(treeRoot *navtree.NavTreeRoot, c *contextmodel.ReqContext) {
 	if s.cfg.HelpEnabled {
@@ -267,24 +262,6 @@ func (s *ServiceImpl) addHelpLinks(treeRoot *navtree.NavTreeRoot, c *contextmode
 		if oldInteractiveLearningPluginInstalled || newInteractiveLearningPluginInstalled {
 			// Add a custom property to indicate this should open the interactive learning plugin if available.
 			helpNode.HideFromTabs = true
-		}
-
-		hasAccess := ac.HasAccess(s.accessControl, c)
-		supportBundleAccess := ac.EvalAny(
-			ac.EvalPermission(supportbundlesimpl.ActionRead),
-			ac.EvalPermission(supportbundlesimpl.ActionCreate),
-		)
-
-		if isSupportBundlesEnabled(s) && hasAccess(supportBundleAccess) {
-			supportBundleNode := &navtree.NavLink{
-				Text:       "Support bundles",
-				Id:         "support-bundles",
-				Url:        s.cfg.AppSubURL + "/support-bundles",
-				Icon:       "wrench",
-				SortWeight: navtree.WeightHelp,
-			}
-
-			helpNode.Children = append(helpNode.Children, supportBundleNode)
 		}
 	}
 }

@@ -6,7 +6,7 @@ import mdx from './Carousel.mdx';
 // Sample images for the stories
 const sampleImages = [
   {
-    path: 'https://grafana.com/static/img/alerting/grafana-alerting-enterprise-scale-mimir-and-loki.png/apple-touch-icon.png',
+    path: 'https://grafana.com/static/img/alerting/grafana-alerting-enterprise-scale-mimir-and-loki.png/cloudian_logo_alt.png',
     name: 'Alert rule',
   },
   { path: 'https://grafana.com/static/img/screenshots/grafana_dash.jpeg', name: 'Dashboard' },

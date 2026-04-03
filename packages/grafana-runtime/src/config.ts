@@ -113,7 +113,7 @@ export class GrafanaBootConfig {
   queryHistoryEnabled = false;
   helpEnabled = false;
   profileEnabled = false;
-  newsFeedEnabled = true;
+  newsFeedEnabled = false;
   ldapEnabled = false;
   jwtHeaderName = '';
   jwtUrlLogin = false;
