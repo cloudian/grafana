@@ -71,7 +71,7 @@ refs:
 
 # Grafana dashboard best practices
 
-This section provides information about best practices for intermediate HyperIQ administrators and users about how to build and maintain Grafana dashboards.
+This section provides information about best practices for intermediate LogInsight administrators and users about how to build and maintain Grafana dashboards.
 
 For more information about the different kinds of dashboards you can create, refer to [Grafana dashboards: A complete guide to all the different types you can build](https://grafana.com/blog/2022/06/06/grafana-dashboards-a-complete-guide-to-all-the-different-types-you-can-build/?pg=webinar-getting-started-with-grafana-dashboard-design-amer&plcmt=related-content-1).
 

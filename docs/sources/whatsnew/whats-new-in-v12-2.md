@@ -60,7 +60,7 @@ weight: -51
 
 # What’s new in Grafana v12.2
 
-Welcome to Cloudian® HyperIQ 12.2! This release focuses on making it easier to gain insights from your data.
+Welcome to Cloudian® LogInsight 12.2! This release focuses on making it easier to gain insights from your data.
 
 We're excited to announce several features are now GA. Enhanced ad hoc filtering transforms your dashboards into true command centers, allowing you to slice and dice datasets on the fly. The redesigned table visualization offers improved performance and visual aids for quick pattern and anomaly identification, helping you make faster decisions. The Logs Drilldown JSON viewer makes intimidating log structures organized and explorable. Metrics Drilldown now integrates with alert creation in Grafana, so you can explore Prometheus data with intuitive point-and-click interactions, find the right visualization, and easily use its query in your alert rule.
 

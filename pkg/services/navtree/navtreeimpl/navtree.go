@@ -117,7 +117,7 @@ func (s *ServiceImpl) GetNavTree(c *contextmodel.ReqContext, prefs *pref.Prefere
 			Id:         navtree.NavIDDashboards,
 			SubTitle:   "Create and manage dashboards to visualize your data",
 			Icon:       "apps",
-			Url:        s.cfg.AppSubURL + "/dashboards?tag=HyperIQ",
+			Url:        s.cfg.AppSubURL + "/dashboards?tag=LogInsight",
 			SortWeight: navtree.WeightDashboard,
 			Children:   dashboardChildLinks,
 		}

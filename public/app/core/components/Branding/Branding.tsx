@@ -65,7 +65,7 @@ export class Branding {
   static LoginBackground = LoginBackground;
   static MenuLogo = MenuLogo;
   static LoginBoxBackground = LoginBoxBackground;
-  static AppTitle = 'Cloudian® HyperIQ';
-  static LoginTitle = 'Welcome to Cloudian® HyperIQ';
+  static AppTitle = 'Cloudian® LogInsight';
+  static LoginTitle = 'Welcome to Cloudian® LogInsight';
   static HideEdition = false;
 }
