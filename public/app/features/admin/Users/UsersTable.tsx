@@ -91,7 +91,7 @@ export const UsersTable = ({
                     {row.original.isAdmin && (
                       <Tooltip
                         placement="top"
-                        content={t('admin.users-table.columns.content-grafana-admin', 'HyperIQ Admin')}
+                        content={t('admin.users-table.columns.content-grafana-admin', 'LogInsight Admin')}
                       >
                         <Icon name="shield" />
                       </Tooltip>

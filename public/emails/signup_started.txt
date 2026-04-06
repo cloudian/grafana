@@ -1,4 +1,4 @@
-{{HiddenSubject .Subject "Welcome to Cloudian® HyperIQ, please complete your sign up!"}}
+{{HiddenSubject .Subject "Welcome to Cloudian® LogInsight, please complete your sign up!"}}
 
 Complete the signup
 
@@ -9,4 +9,4 @@ in the sign up form or use the link below.
 {{.SignUpUrl}}
 
 
-Sent by HyperIQ (c) {{now | date "2006"}} Grafana Labs and Cloudian, Inc.
+Sent by LogInsight (c) {{now | date "2006"}} Grafana Labs and Cloudian, Inc.

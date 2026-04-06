@@ -6,7 +6,7 @@ aliases:
   - ../enterprise/query-caching/
   - ../features/datasources/add-a-data-source/
   - ../permissions/datasource_permissions/
-description: Data source management information for HyperIQ administrators
+description: Data source management information for LogInsight administrators
 labels:
   products:
     - enterprise

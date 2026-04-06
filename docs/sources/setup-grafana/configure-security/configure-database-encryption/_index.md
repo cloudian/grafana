@@ -39,13 +39,13 @@ Instead of encrypting all secrets with a single key, Grafana uses a set of keys 
 
 ### Implicit breaking change
 
-Envelope encryption introduces an implicit breaking change to versions of Grafana prior to v9.0, because it changes how secrets stored in the Grafana database are encrypted. HyperIQ administrators can upgrade to Grafana v9.0 with no action required from the database encryption perspective, but must be extremely careful if they need to roll an upgrade back to Grafana v8.5 or earlier because secrets created or modified after upgrading to Grafana v9.0 can’t be decrypted by previous versions.
+Envelope encryption introduces an implicit breaking change to versions of Grafana prior to v9.0, because it changes how secrets stored in the Grafana database are encrypted. LogInsight administrators can upgrade to Grafana v9.0 with no action required from the database encryption perspective, but must be extremely careful if they need to roll an upgrade back to Grafana v8.5 or earlier because secrets created or modified after upgrading to Grafana v9.0 can’t be decrypted by previous versions.
 
-Grafana v8.5 implemented envelope encryption behind an optional feature toggle. HyperIQ administrators who need to downgrade to Grafana v8.5 can enable envelope encryption as a workaround by adding the feature toggle `envelopeEncryption` to the [Grafana configuration](../../configure-grafana/#feature_toggles).
+Grafana v8.5 implemented envelope encryption behind an optional feature toggle. LogInsight administrators who need to downgrade to Grafana v8.5 can enable envelope encryption as a workaround by adding the feature toggle `envelopeEncryption` to the [Grafana configuration](../../configure-grafana/#feature_toggles).
 
 ## Operational work
 
-From the database encryption perspective, HyperIQ administrators can:
+From the database encryption perspective, LogInsight administrators can:
 
 - [**Re-encrypt secrets**](#re-encrypt-secrets): re-encrypt secrets with envelope encryption and a fresh data key.
 - [**Roll back secrets**](#roll-back-secrets): decrypt secrets encrypted with envelope encryption and re-encrypt them with legacy encryption.
