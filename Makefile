@@ -135,7 +135,7 @@ i18n-extract-enterprise:
 	@echo "Skipping i18n extract for Enterprise: not enabled"
 else
 i18n-extract-enterprise:
-	@echo "Extracting i18n strings for Enterprise"	
+	@echo "Extracting i18n strings for Enterprise"
 	cd public/locales/enterprise && yarn run i18next-cli extract --sync-primary
 endif
 
@@ -436,6 +436,23 @@ ifeq (${NODE_ENV}, dev)
   DOCKER_JS_YARN_BUILD_FLAG = dev
 	DOCKER_JS_YARN_INSTALL_FLAG =
 endif
+
+.PHONY: build-docker-full-cloudian
+build-docker-full-cloudian: ## Build Cloudian Grafana image
+	@echo "build docker container mode=($(DOCKER_JS_NODE_ENV_FLAG))"
+	tar -ch . | \
+	docker buildx build - \
+	--platform $(PLATFORM) \
+	--build-arg NODE_ENV=$(DOCKER_JS_NODE_ENV_FLAG) \
+	--build-arg JS_NODE_ENV=$(DOCKER_JS_NODE_ENV_FLAG) \
+	--build-arg JS_YARN_INSTALL_FLAG=$(DOCKER_JS_YARN_INSTALL_FLAG) \
+	--build-arg JS_YARN_BUILD_FLAG=$(DOCKER_JS_YARN_BUILD_FLAG) \
+	--build-arg GO_BUILD_TAGS=$(GO_BUILD_TAGS) \
+	--build-arg WIRE_TAGS=$(WIRE_TAGS) \
+	--build-arg COMMIT_SHA=$$(git rev-parse HEAD) \
+	--build-arg BUILD_BRANCH=$$(git rev-parse --abbrev-ref HEAD) \
+	--tag $(REPO):$(TAG) \
+	$(DOCKER_BUILD_ARGS)
 
 .PHONY: build-docker-full
 build-docker-full: ## Build Docker image for development.

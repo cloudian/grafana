@@ -25,14 +25,6 @@ cards:
       href: ./logs/
       description: Visualize log volumes to easily detect anomalies or significant changes over time, without needing to compose LogQL queries.
       height: 24
-    - title: Grafana Traces Drilldown
-      href: ./traces/
-      description: Use Rate, Errors, and Duration (RED) metrics derived from traces to investigate and understand errors and latency issues within complex distributed systems.
-      height: 24
-    - title: Grafana Profiles Drilldown
-      href: ./profiles/
-      description: View and analyze high-level service performance, identify problem processes for optimization, and diagnose issues to determine root causes.
-      height: 24
 aliases:
   - ../explore/simplified-exploration/ # /docs/grafana/next/explore/simplified-exploration/
 ---

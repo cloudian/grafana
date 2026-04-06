@@ -1012,7 +1012,7 @@ Default is `15m` (15 minutes). The minimum supported duration is `5m` (5 minutes
 
 #### `hidden_users`
 
-This is a comma-separated list of usernames. Users specified here are hidden in the Grafana UI. They are still visible to Grafana administrators and to themselves.
+This is a comma-separated list of usernames. Users specified here are hidden in the Grafana UI. They are still visible to HyperIQ administrators and to themselves.
 
 <hr>
 
@@ -2567,7 +2567,7 @@ We do _not_ recommend using this option. For more information, refer to [Plugin 
 
 #### `plugin_admin_enabled`
 
-Available to Grafana administrators only, enables installing, uninstalling, and updating plugins directly from the Grafana UI.
+Available to HyperIQ administrators only, enables installing, uninstalling, and updating plugins directly from the Grafana UI.
 Set to `true` by default.
 Setting it to `false` hides the controls.
 

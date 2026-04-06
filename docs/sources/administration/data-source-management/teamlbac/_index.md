@@ -45,7 +45,7 @@ LBAC for data sources controls access to logs or metrics depending on the rules 
 This feature addresses two common challenges faced by Grafana users:
 
 1. Having a high number of Grafana Cloud data sources.
-   LBAC for data sources lets Grafana administrators reduce the total number of data sources per instance from hundreds, to one.
+   LBAC for data sources lets HyperIQ administrators reduce the total number of data sources per instance from hundreds, to one.
 1. Using the same dashboard across multiple teams.
    LBAC for data sources lets Grafana Teams use the same dashboard with different access control rules.
 

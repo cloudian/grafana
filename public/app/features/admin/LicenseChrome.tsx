@@ -3,7 +3,7 @@ import * as React from 'react';
 
 import { GrafanaTheme2 } from '@grafana/data';
 import { useStyles2, useTheme2 } from '@grafana/ui';
-import grafanaIconSvg from 'img/grafana_icon.svg';
+import grafanaIconSvg from 'img/cloudian_logo.png';
 import headerDarkSvg from 'img/licensing/header_dark.svg';
 import headerLightSvg from 'img/licensing/header_light.svg';
 
@@ -62,7 +62,7 @@ export function LicenseChrome({ header, editionNotice, subheader, children }: Pr
         >
           <img
             src={grafanaIconSvg}
-            alt="Grafana"
+            alt="Cloudian"
             width="80px"
             style={{ position: 'absolute', left: '23px', top: '20px' }}
           />
