@@ -8,10 +8,8 @@ import { isLocalDevEnv } from '../utils/misc';
 import { withPageErrorBoundary } from '../withPageErrorBoundary';
 
 import GettingStarted, { WelcomeHeader } from './GettingStarted';
-import IRMCard from './IRMCard';
 import { getInsightsScenes, insightsIsAvailable } from './Insights';
 import { PluginIntegrations } from './PluginIntegrations';
-import SyntheticMonitoringCard from './SyntheticMonitoringCard';
 
 function Home() {
   const insightsEnabled = insightsIsAvailable() || isLocalDevEnv();
@@ -25,12 +23,6 @@ function Home() {
         <WelcomeHeader />
         <PluginIntegrations />
       </Stack>
-      <Box marginTop={{ lg: 2, md: 2, xs: 2 }}>
-        <Stack direction="row" gap={2}>
-          <SyntheticMonitoringCard />
-          <IRMCard />
-        </Stack>
-      </Box>
       <Box marginTop={{ lg: 2, md: 0, xs: 0 }}>
         <TabsBar>
           {insightsEnabled && (

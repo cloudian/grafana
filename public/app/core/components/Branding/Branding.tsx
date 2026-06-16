@@ -5,9 +5,9 @@ import { colorManipulator, GrafanaTheme2, NavModelItem } from '@grafana/data';
 import { selectors } from '@grafana/e2e-selectors';
 import { reportInteraction } from '@grafana/runtime';
 import { Tooltip, useStyles2, useTheme2 } from '@grafana/ui';
-import g8LoginDarkSvg from 'img/g8_login_dark.svg';
-import g8LoginLightSvg from 'img/g8_login_light.svg';
-import grafanaIconSvg from 'img/grafana_icon.svg';
+import g8LoginDarkSvg from 'img/login_bg.jpg';
+import g8LoginLightSvg from 'img/login_bg.jpg';
+import grafanaIconSvg from 'img/cloudian_logo.png';
 
 export interface BrandComponentProps {
   className?: string;
@@ -15,7 +15,7 @@ export interface BrandComponentProps {
 }
 
 export const LoginLogo: FC<BrandComponentProps & { logo?: string }> = ({ className, logo }) => {
-  return <img className={className} src={`${logo ? logo : grafanaIconSvg}`} alt="Grafana" />;
+  return <img className={className} src={`${logo ? logo : grafanaIconSvg}`} alt="Cloudian" />;
 };
 
 const LoginBackground: FC<BrandComponentProps> = ({ className, children }) => {
@@ -51,7 +51,7 @@ const LoginBackground: FC<BrandComponentProps> = ({ className, children }) => {
 };
 
 const MenuLogo: FC<BrandComponentProps> = ({ className }) => {
-  return <img className={className} src={grafanaIconSvg} alt="Grafana" />;
+  return <img className={className} src={grafanaIconSvg} alt="Cloudian" />;
 };
 
 /**
@@ -117,10 +117,7 @@ export class Branding {
   static LoginBackground = LoginBackground;
   static MenuLogo = MenuLogo;
   static LoginBoxBackground = LoginBoxBackground;
-  static AppTitle = 'Grafana';
-  static LoginTitle = 'Welcome to Grafana';
+  static AppTitle = 'Cloudian® HyperIQ';
+  static LoginTitle = 'Welcome to Cloudian® HyperIQ';
   static HideEdition = false;
-  static GetLoginSubTitle = (): null | string => {
-    return null;
-  };
 }

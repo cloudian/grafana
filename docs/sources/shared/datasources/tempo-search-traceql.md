@@ -65,7 +65,7 @@ To access the **Search** query builder, use the following steps:
 Using filters, you refine the data returned from the query by selecting **Service Name**, **Span Name**, **Status**, or **Duration**.
 **Duration** represents span time, calculated by subtracting the end time from the start time of the span.
 
-Grafana administrators can change the default filters using the Tempo data source configuration.
+HyperIQ administrators can change the default filters using the Tempo data source configuration.
 Filters can be limited by the operators.
 The field type determines the available operators.
 For example, **Span Name** and **Service Name** are string fields so the comparison operators are equals (`=`), not equal (`!=`), matches regular expressions (`=~`), or doesn't match regular expression (`!~`).

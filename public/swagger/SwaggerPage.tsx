@@ -5,9 +5,10 @@ import SwaggerUI from 'swagger-ui-react';
 
 import { createTheme, monacoLanguageRegistry, SelectableValue } from '@grafana/data';
 import { Trans } from '@grafana/i18n';
-import { Icon, Stack, Select, UserIcon, UserView, Button } from '@grafana/ui';
+import { Stack, Select, UserIcon, UserView, Button } from '@grafana/ui';
 import { setMonacoEnv } from 'app/core/monacoEnv';
 import { ThemeProvider } from 'app/core/utils/ConfigProvider';
+import grafanaIconSvg from 'img/cloudian_logo.png';
 
 import { NamespaceContext, WrappedPlugins } from './plugins';
 
@@ -84,7 +85,7 @@ export const Page = () => {
         <NamespaceContext.Provider value={namespace.value}>
           <div style={{ backgroundColor: '#000', padding: '10px' }}>
             <Stack justifyContent={'space-between'}>
-              <Icon name="grafana" size="xxl" />
+              <img height="40" src={grafanaIconSvg} alt="Cloudian" />
               <Select
                 options={urls.value}
                 isClearable={false /* TODO -- when we allow a landing page, this can be true */}

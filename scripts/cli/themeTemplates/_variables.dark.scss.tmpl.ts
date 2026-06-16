@@ -38,6 +38,7 @@ $layer2: ${theme.colors.background.secondary};
 // -------------------------
 $blue: ${theme.v1.palette.blue85};
 $red: $red-base;
+$green: ${theme.v1.palette.green};
 $yellow: ${theme.v1.palette.yellow};
 $purple: ${theme.v1.palette.purple};
 

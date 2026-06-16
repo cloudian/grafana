@@ -5,7 +5,7 @@ import { Carousel } from './Carousel';
 
 const testImages = [
   {
-    path: 'https://grafana.com/static/img/alerting/grafana-alerting-enterprise-scale-mimir-and-loki.png/apple-touch-icon.png',
+    path: 'https://grafana.com/static/img/alerting/grafana-alerting-enterprise-scale-mimir-and-loki.png/cloudian_logo_alt.png',
     name: 'Alert rule',
   },
   { path: 'https://grafana.com/static/img/screenshots/grafana_dash.jpeg', name: 'Dashboard' },

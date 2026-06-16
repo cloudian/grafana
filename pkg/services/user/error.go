@@ -10,7 +10,7 @@ var (
 	ErrCaseInsensitive   = errors.New("case insensitive conflict")
 	ErrUserNotFound      = errors.New("user not found")
 	ErrUserAlreadyExists = errors.New("user already exists")
-	ErrLastGrafanaAdmin  = errors.New("cannot remove last grafana admin")
+	ErrLastGrafanaAdmin  = errors.New("cannot remove last admin")
 	ErrProtectedUser     = errors.New("cannot adopt protected user")
 	ErrNoUniqueID        = errors.New("identifying id not found")
 	ErrLastSeenUpToDate  = errors.New("last seen is already up to date")

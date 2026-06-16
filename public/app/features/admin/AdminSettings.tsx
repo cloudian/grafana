@@ -17,8 +17,7 @@ function AdminSettings() {
       <Page.Contents>
         <Alert severity="info" title="">
           <Trans i18nKey="admin.settings.info-description">
-            These system settings are defined in grafana.ini or custom.ini (or overridden in ENV variables). To change
-            these you currently need to restart Grafana.
+            These system settings are defined in custom.ini (or overridden in ENV variables).
           </Trans>
         </Alert>
 

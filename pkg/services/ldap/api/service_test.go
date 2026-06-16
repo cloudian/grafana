@@ -510,7 +510,7 @@ func TestPostSyncUserWithLDAPAPIEndpoint_WhenGrafanaAdmin(t *testing.T) {
 	var resMap map[string]interface{}
 	err = json.Unmarshal(bodyBytes, &resMap)
 	assert.NoError(t, err)
-	assert.Equal(t, "Refusing to sync grafana super admin \"ldap-daniel\" - it would be disabled", resMap["message"])
+	assert.Equal(t, "Refusing to sync super admin \"ldap-daniel\" - it would be disabled", resMap["message"])
 }
 
 func TestPostSyncUserWithLDAPAPIEndpoint_WhenUserNotInLDAP(t *testing.T) {

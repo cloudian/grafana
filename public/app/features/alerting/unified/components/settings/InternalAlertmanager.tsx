@@ -1,4 +1,4 @@
-import grafanaIconSvg from 'img/grafana_icon.svg';
+import grafanaIconSvg from 'img/cloudian_logo.png';
 
 import { ConnectionStatus } from '../../hooks/useExternalAmSelector';
 import { GRAFANA_RULES_SOURCE_NAME } from '../../utils/datasource';

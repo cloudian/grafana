@@ -30,8 +30,8 @@ const mockPlugin: CatalogPlugin = {
   hasUpdate: false,
   info: {
     logos: {
-      large: 'https://grafana.com/assets/img/brand/grafana_icon.svg',
-      small: 'https://grafana.com/assets/img/brand/grafana_icon.svg',
+      large: 'https://grafana.com/assets/img/brand/cloudian_logo.png',
+      small: 'https://grafana.com/assets/img/brand/cloudian_logo.png',
     },
     keywords: [],
   },

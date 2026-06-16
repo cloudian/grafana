@@ -5,7 +5,6 @@ import { StoreState, useSelector } from 'app/types/store';
 import { isOpenSourceBuildOrUnlicenced } from '../admin/EnterpriseAuthFeaturesCard';
 
 import { ROUTES } from './constants';
-import { AddNewConnectionPage } from './pages/AddNewConnectionPage';
 import { CacheFeatureHighlightPage } from './pages/CacheFeatureHighlightPage';
 import ConnectionsHomePage from './pages/ConnectionsHomePage';
 import { DataSourceDashboardsPage } from './pages/DataSourceDashboardsPage';
@@ -22,7 +21,7 @@ function RedirectToAddNewConnection() {
     <Navigate
       replace
       to={{
-        pathname: ROUTES.AddNewConnection,
+        pathname: ROUTES.DataSources,
         search,
       }}
     />
@@ -31,7 +30,6 @@ function RedirectToAddNewConnection() {
 
 export default function Connections() {
   const navIndex = useSelector((state: StoreState) => state.navIndex);
-  const isAddNewConnectionPageOverridden = Boolean(navIndex['standalone-plugin-page-/connections/add-new-connection']);
   const shouldEnableFeatureHighlights = isOpenSourceBuildOrUnlicenced();
 
   return (
@@ -73,15 +71,6 @@ export default function Connections() {
         path={ROUTES.DataSourcesDashboards.replace(ROUTES.Base, '')}
         element={<DataSourceDashboardsPage />}
       />
-
-      {/* "Add new connection" page - we don't register a route in case a plugin already registers a standalone page for it */}
-      {!isAddNewConnectionPageOverridden && (
-        <Route
-          caseSensitive
-          path={ROUTES.AddNewConnection.replace(ROUTES.Base, '')}
-          element={<AddNewConnectionPage />}
-        />
-      )}
 
       {/* Redirect from earlier routes to updated routes */}
       <Route path={ROUTES.ConnectDataOutdated.replace(ROUTES.Base, '')} element={<RedirectToAddNewConnection />} />
