@@ -1,6 +1,9 @@
 ![Grafana Logo (Light)](docs/logo-horizontal.png#gh-light-mode-only)
 ![Grafana Logo (Dark)](docs/logo-horizontal-dark.png#gh-dark-mode-only)
 
+> **This is a modified version of Grafana maintained by Cloudian, Inc. Last modified: June 2026.**
+> Source code for this modified version is available at https://github.com/cloudian/grafana
+
 The open-source platform for monitoring and observability
 
 [![License](https://img.shields.io/github/license/grafana/grafana)](LICENSE)
