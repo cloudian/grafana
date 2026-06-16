@@ -1,3 +1,4 @@
+// Copyright 2025 Cloudian, Inc. (modified from original Grafana source)
 import { css, cx } from '@emotion/css';
 import { FC, type JSX } from 'react';
 
