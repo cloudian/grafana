@@ -1,3 +1,4 @@
+// Copyright 2025 Cloudian, Inc. (modified from original Grafana source)
 package licensing
 
 import (
