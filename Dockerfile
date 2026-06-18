@@ -25,6 +25,7 @@ ARG JS_YARN_BUILD_FLAG=build
 ENV NODE_OPTIONS=--max_old_space_size=8000
 ENV NX_SKIP_NX_CACHE=true
 ENV NX_DAEMON=false
+ENV NX_CACHE_DIRECTORY=/tmp/nx-cache
 
 WORKDIR /tmp/grafana
 
