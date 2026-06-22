@@ -23,6 +23,9 @@ ARG JS_YARN_INSTALL_FLAG=--immutable
 ARG JS_YARN_BUILD_FLAG=build
 
 ENV NODE_OPTIONS=--max_old_space_size=8000
+ENV NX_SKIP_NX_CACHE=true
+ENV NX_DAEMON=false
+ENV NX_CACHE_DIRECTORY=/root/.nx
 
 WORKDIR /tmp/grafana
 
@@ -52,8 +55,8 @@ COPY tsconfig.json eslint.config.js .editorconfig .browserslistrc .prettierrc.js
 COPY scripts scripts
 COPY emails emails
 
-# Set the build argument according to default or argument passed
-RUN yarn ${JS_YARN_BUILD_FLAG}
+# Run webpack directly to bypass NX's SQLite task-hashing DB which fails on Docker's overlay filesystem
+RUN NODE_ENV=production node_modules/.bin/webpack --config scripts/webpack/webpack.prod.js
 
 # Golang build stage
 FROM ${GO_IMAGE} AS go-builder
