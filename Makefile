@@ -301,6 +301,8 @@ build-cli: ## Build Grafana CLI application.
 build-js: ## Build frontend assets.
 	@echo "build frontend"
 	yarn run build
+	@echo "build postgres plugin"
+	yarn workspace @grafana-plugins/grafana-postgresql-datasource run build
 
 PLUGIN_ID ?=
 

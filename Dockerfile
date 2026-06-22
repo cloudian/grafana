@@ -58,6 +58,9 @@ COPY emails emails
 # Run webpack directly to bypass NX's SQLite task-hashing DB which fails on Docker's overlay filesystem
 RUN NODE_ENV=production node_modules/.bin/webpack --config scripts/webpack/webpack.prod.js
 
+# Build postgres datasource plugin separately (has its own webpack config, not bundled in main webpack)
+RUN cd public/app/plugins/datasource/grafana-postgresql-datasource && yarn build
+
 # Golang build stage
 FROM ${GO_IMAGE} AS go-builder
 
