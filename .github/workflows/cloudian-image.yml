@@ -51,12 +51,6 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 120
     steps:
-      # The Grafana build (node_modules, Go, the image layers) needs more than the 14 GB the runner has free
-      - name: Free disk space
-        run: |
-          df -h /
-          sudo rm -rf /usr/share/dotnet /usr/local/lib/android /opt/ghc /opt/hostedtoolcache/CodeQL
-          df -h /
 
       # The tag is the Grafana version the branch is for, not git describe: that is the tag
       # HyperIQ and LogInsight build FROM, and it is replaced when the image is rebuilt
