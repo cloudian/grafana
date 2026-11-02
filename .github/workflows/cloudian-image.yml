@@ -46,18 +46,17 @@ concurrency:
 jobs:
   image:
     name: Build image
-    # A pull request from a fork must not run on our self-hosted runners
-    if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository
-    runs-on: [self-hosted, large]
+    # GitHub-hosted, not our self-hosted runners: this is a public repository, and self-hosted
+    # runners must not run code from a public repository
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
     steps:
-      # Self-hosted runners reuse the workspace; checkout can't recover a broken one
-      # (actions/checkout#1148), so start from an empty directory
-      - name: Clean workspace
+      # The Grafana build (node_modules, Go, the image layers) needs more than the 14 GB the runner has free
+      - name: Free disk space
         run: |
-          ls -la "$GITHUB_WORKSPACE"
-          chmod -R u+w "$GITHUB_WORKSPACE"
-          rm -rf "$GITHUB_WORKSPACE"
-          mkdir -p "$GITHUB_WORKSPACE"
+          df -h /
+          sudo rm -rf /usr/share/dotnet /usr/local/lib/android /opt/ghc /opt/hostedtoolcache/CodeQL
+          df -h /
 
       # The tag is the Grafana version the branch is for, not git describe: that is the tag
       # HyperIQ and LogInsight build FROM, and it is replaced when the image is rebuilt
@@ -129,7 +128,7 @@ jobs:
           docker push "$REPO:$TAG"
           echo "Pushed $(docker image inspect --format '{{index .RepoDigests 0}}' "$REPO:$TAG")" | tee -a "$GITHUB_STEP_SUMMARY"
 
-      # The image is large and the runner is shared
+      # Leave nothing behind, in case the credentials or image are looked for
       - name: Clean up
         if: always()
         env:
